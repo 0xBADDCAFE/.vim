@@ -1,6 +1,79 @@
+" ctrlp{{{
+let g:ctrlp_cmd = 'CtrlPMRUFiles'
+" The maximum number of files to scan, set to 0 for no limit: >
+" let g:ctrlp_max_files = 1000
+" Set this to 0 to show the match window at the top of the screen: >
+let g:ctrlp_match_window_bottom = 1
+" Change the listing order of the files in the match window. The default setting
+" (1) is from bottom to top: >
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_max_height = 16
+let g:ctrlp_clear_cache_on_exit = 0
+" let g:ctrlp_extensions = ['mixed']
+let g:ctrlp_prompt_mappings = {
+  \ 'PrtSelectMove("j")':   ['<tab>', '<down>'],
+  \ 'PrtSelectMove("k")':   ['<s-tab>', '<up>'],
+  \ 'ToggleFocus()':        ['<C-j>'],
+  \ 'PrtExpandDir()':       ['<C-k>'],
+  \ }
+" }}}
+" powerline{{{
+let Powerline_colorscheme='solarized'
+" }}}
+" indent-guide {{{
+" let g:indent_guides_color_change_percent = 2
+let g:indent_guides_enable_on_vim_startup = 1
+" let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_auto_colors = 0
+augroup IndGuCol
+	au!
+	au VimEnter,colorscheme * highlight IndentGuidesOdd guifg=#073642 guibg=#002b36
+	"solarized base02
+	au VimEnter,colorscheme * highlight IndentGuidesEven guifg=#002b36 guibg=#073642
+augroup END
+" }}}
+" ag.vim {{{
+" Don't allow ag.vim to mapping keys in quickfix.
+let g:ag_apply_qmappings = 0
+let g:ag_apply_lmappings = 0
+" }}}
+
+" neobundle settings {{{
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+" Use https protocol over proxy.
+let g:neobundle#types#git#default_protocol = 'https'
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Recommended to install
+" After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
+" NeoBundle 'Shougo/vimproc'
+
+" My Bundles here:
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle '0xBADDCAFE/midnight.vim'
 NeoBundle 'epmatsw/ag.vim'
 NeoBundle 'glidenote/memolist.vim'
+
+filetype plugin indent on     " Required!
+"
+" Brief help
+" :NeoBundleList          - list configured bundles
+" :NeoBundleInstall(!)    - install(update) bundles
+" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+
+" Installation check.
+NeoBundleCheck
+
+" }}}
+
+" vim:ft=vim:fdm=marker:

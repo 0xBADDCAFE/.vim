@@ -230,6 +230,9 @@ colorscheme solarized
 " }}}
 
 
+" plugin setting file
+source ~/.vim/.vimrc.bundle
+
 let &cpo=s:cpo_save
 unlet s:cpo_save
 " vim:ft=vim:fdm=marker:
