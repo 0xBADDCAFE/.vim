@@ -1,0 +1,6 @@
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle '0xBADDCAFE/midnight.vim'
+NeoBundle 'epmatsw/ag.vim'
+NeoBundle 'glidenote/memolist.vim'
