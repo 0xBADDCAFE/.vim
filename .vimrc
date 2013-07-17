@@ -1,7 +1,14 @@
 
 
 
-" TODO: folder existing check.
+" TODO: 
+" - on mac settings(transparency).
+" - folder existing check.
+" - Make togglable setting to scroll arrow key.
+" FIXME:
+" BUGS:
+" Note:
+" Experimental:
 
 version 6.0
 if &cp | set nocp | endif
@@ -81,6 +88,9 @@ set guioptions-=m
 set guioptions-=T
 " with path============================================================
 set backupdir=$VIM/bkfiles
+if has('unix')
+  set backupskip=/tmp/*,/private/tmp/*
+endif
 set viminfo& viminfo+=n~/.viminfo
 set grepprg=jvgrep
 
@@ -134,21 +144,25 @@ noremap Q gq
 nnoremap <F1> <nop>
 nnoremap j gj
 nnoremap k gk
-nnoremap <Down> gj
-nnoremap <Up>   gk
 nnoremap gj j
 nnoremap gk k
+nnoremap <Up>   <C-y>M
+nnoremap <Down> <C-e>M
+nnoremap <Left> zh
+nnoremap <Right> zl
 nnoremap Y y$
 inoremap <C-U> <C-G>u<C-U>
 
 " command maps
-nnoremap <silent> ,e :<C-u>edit ~/.vim/.vimrc<CR>
+nnoremap <silent> ,ee :<C-u>e ~/.vim/.vimrc<CR>
+nnoremap <silent> ,eh :<C-u>sp ~/.vim/.vimrc<CR>
+nnoremap <silent> ,ev :<C-u>vs ~/.vim/.vimrc<CR>
 nnoremap <silent> ,r :<C-u>source ~/.vim/.vimrc<CR>
 nnoremap B :ls<CR>:b
 nnoremap : q:i
 " It doesn't work incsearch.
 " 	nnoremap / q/i
-" [Experimental] Wrap fold with <CR>.
+" Experimental: Wrap fold with <CR>.
 nnoremap <silent> <CR> :<C-u>silent! normal! za<CR><CR>
 " }}}
 
@@ -200,9 +214,46 @@ colorscheme solarized
 
 
 " functions {{{
-" test safequit{{{
+" These are util functions almost taken from deris/config/.vimrc
+" check https://github.com/deris/Config/blob/master/.vimrc
+"
+" LetAndMkdir{{{
+" use:
+" " call s:LetAndMkdir('&backupdir', $DOTVIM.'/backup')
+"
+" function! s:LetAndMkdir(variable, path) 
+"   try
+"     if !isdirectory(a:path)
+"       call mkdir(a:path, 'p')
+"     endif
+"   catch
+"     echohl WarningMsg
+"     echom '[error]' . a:path . 'is exist and is not directory, but is file or something.'
+"     echohl None
+"   endtry
 " 
-" " exƒRƒ}ƒ“ƒh
+"   execute printf("let %s = a:path", a:variable)
+" endfunction "}}}
+"
+" PromptAndMakeDirectory{{{
+" use:
+" augroup AutoMkdir
+"   autocmd!
+"   autocmd BufNewFile * call PromptAndMakeDirectory()
+" augroup END
+" 
+" function! PromptAndMakeDirectory()
+"   let dir = expand("<afile>:p:h")
+"   if !isdirectory(dir) && confirm("Create a new directory [".dir."]?", "&Yes\n&No") == 1
+"     call mkdir(dir, "p")
+"     " Reset fullpath of the buffer in order to avoid problems when using autochdir.
+"     file %
+"   endif
+" endfunction
+" }}}
+"
+" SafeQuit{{{
+" " use:
 " nnoremap ZZ :<C-u>SafeQuit<CR>
 " nnoremap ZQ :<C-u>SafeQuit!<CR>
 " 
@@ -225,7 +276,6 @@ colorscheme solarized
 " endfunction
 " 
 " command! -bang SafeQuit call s:safeQuit('<bang>')
-" 
 " }}}
 " }}}
 
@@ -235,4 +285,4 @@ source ~/.vim/.vimrc.bundle
 
 let &cpo=s:cpo_save
 unlet s:cpo_save
-" vim:ft=vim:fdm=marker:
+" vim: ft=vim:et:sts=4:fdm=marker :
