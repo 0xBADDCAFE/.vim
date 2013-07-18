@@ -2,7 +2,7 @@
 
 
 " TODO: 
-" - on mac settings(transparency).
+" - on mac settings(i.e. transparency).
 " - folder existing check.
 " - Make togglable setting to scroll arrow key.
 " FIXME:
@@ -196,20 +196,11 @@ let g:solarized_italic=0
 
 
 " colorscheme and highlightings{{{
-" Light Solarized color.
-augroup SpKeyColLight
+augroup highlightIdeographicSpace
   autocmd!
-  autocmd colorscheme * highlight SpecialKey guifg=#073642 guibg=NONE "solarized base02
-  autocmd colorscheme * highlight NonText guifg=#073642 guibg=NONE "solarized base02
-augroup END
-augroup hilightIdeographicSpace
-  autocmd!
-  autocmd Vimenter,ColorScheme * highlight IdeographicSpace term=underline ctermbg=DarkGreen guibg=#073642
+  autocmd Vimenter,ColorScheme * highlight IdeographicSpace term=underline cterm=reverse gui=reverse
   autocmd VimEnter,WinEnter * match IdeographicSpace /Å@/
 augroup END
-" TODO: check the value's effect
-" let g:solarized_termtrans = 1
-colorscheme solarized
 " }}}
 
 
