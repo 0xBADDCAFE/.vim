@@ -2,8 +2,11 @@
 ====
 
 Vim KaoriYaを想定した設定。
+
 一応Terminalなどの切り分けもしてある。
+
 動作確認: Vim KaoriYa Windows(32/64bit), MSYS, Cygwin
+
 設定予定: MacVim Kaoriya
 
 使う
