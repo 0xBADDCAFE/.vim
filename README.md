@@ -10,11 +10,13 @@ Vim KaoriYaを想定した設定。
 ----
 
 1. $HOME辺りに`git clone`する。
-2. `:e $MYVIMRC`
+2. `:e $MYVIMRC`($HOMEに.vimrcが無いならば作る)
 
   ```VimL
   source ~/.vim/.vimrc
   ```
+  
+  また変更予定のない環境依存のPATH設定などもここで行う。
 
 3. gvimrc\_local.vim, vimrc\_local.vimを＄VIMに投げ込む。
 
