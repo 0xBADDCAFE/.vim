@@ -18,7 +18,8 @@ let g:ctrlp_prompt_mappings = {
   \ }
 " }}}
 " powerline{{{
-let Powerline_colorscheme='solarized'
+" move to colorscheme setting.
+" let Powerline_colorscheme='solarized'
 " }}}
 " indent-guide {{{
 " let g:indent_guides_color_change_percent = 2
@@ -59,7 +60,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Recommended to install
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
-" NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc'
 
 " My Bundles here:{{{
 NeoBundle 'kien/ctrlp.vim'
@@ -100,6 +101,7 @@ if has('gui')
 	augroup END
 	" TODO: check the value's effect
 	" let g:solarized_termtrans = 1
+	let Powerline_colorscheme='solarized'
 	colorscheme solarized
 else
 	colorscheme midnight
