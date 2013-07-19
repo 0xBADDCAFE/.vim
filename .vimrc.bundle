@@ -69,6 +69,7 @@ NeoBundle 'w0ng/vim-hybrid'
 NeoBundle '0xBADDCAFE/midnight.vim'
 NeoBundle 'epmatsw/ag.vim'
 NeoBundle 'glidenote/memolist.vim'
+NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'thinca/vim-scouter'
 NeoBundle 'nathanaelkane/vim-indent-guides'
@@ -89,16 +90,20 @@ NeoBundleCheck
 
 " settings need before loading plugins
 " solarized{{{
-augroup solarizedAddHi
-  autocmd!
-  autocmd ColorScheme * highlight SpecialKey guifg=#073642 guibg=NONE "solarized base02
-  autocmd ColorScheme * highlight NonText guifg=#073642 guibg=NONE "solarized base02
-  " autocmd Vimenter,ColorScheme * highlight IdeographicSpace term=underline ctermbg=DarkGreen guibg=#073642
-  autocmd Vimenter,ColorScheme * highlight IdeographicSpace gui=NONE guibg=#073642
-augroup END
-" TODO: check the value's effect
-" let g:solarized_termtrans = 1
-colorscheme solarized
+if has('gui')
+	augroup solarizedAddHi
+		autocmd!
+		autocmd ColorScheme * highlight SpecialKey guifg=#073642 guibg=NONE "solarized base02
+		autocmd ColorScheme * highlight NonText guifg=#073642 guibg=NONE "solarized base02
+		" autocmd Vimenter,ColorScheme * highlight IdeographicSpace term=underline ctermbg=DarkGreen guibg=#073642
+		autocmd Vimenter,ColorScheme * highlight IdeographicSpace gui=NONE guibg=#073642
+	augroup END
+	" TODO: check the value's effect
+	" let g:solarized_termtrans = 1
+	colorscheme solarized
+else
+	colorscheme midnight
+endif
 " }}}
 "
 " vim:ft=vim:fdm=marker:

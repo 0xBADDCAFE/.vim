@@ -157,7 +157,7 @@ inoremap <C-U> <C-G>u<C-U>
 nnoremap <silent> ,ee :<C-u>e ~/.vim/.vimrc<CR>
 nnoremap <silent> ,eh :<C-u>sp ~/.vim/.vimrc<CR>
 nnoremap <silent> ,ev :<C-u>vs ~/.vim/.vimrc<CR>
-nnoremap <silent> ,r :<C-u>source ~/.vim/.vimrc<CR>
+nnoremap <silent> ,r :<C-u>source $MYVIMRC<CR>
 nnoremap B :ls<CR>:b
 nnoremap : q:i
 " It doesn't work incsearch.
