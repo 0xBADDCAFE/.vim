@@ -70,10 +70,8 @@ set virtualedit=block
 set wildmenu
 set wildmode=longest:list,full
 set wrapscan
-" about visual=========================================================
-set columns=80
+" about visual(or having-number options)===============================
 set laststatus=2
-set lines=48
 set showtabline=2
 set cmdheight=1
 set foldcolumn=1
@@ -82,12 +80,16 @@ set tabstop=4
 set shiftwidth=4
 set nrformats-=octal
 set textwidth=0
+if has('gui')
+  set lines=48
+  set columns=80
 
-set guioptions-=e
-set guioptions-=m
-set guioptions-=T
+  set guioptions-=e
+  set guioptions-=m
+  set guioptions-=T
+endif
 " with path============================================================
-set backupdir=$VIM/bkfiles
+set backupdir=~/.vim/bkfiles
 if has('unix')
   set backupskip=/tmp/*,/private/tmp/*
 endif
@@ -101,7 +103,7 @@ cd $HOME
 " Env-dependent settings {{{
 " these are almost taken kaoriya settings.
 if has('mac')
-  " Mac‚Å‚ÍƒfƒtƒHƒ‹ƒg‚Ì'iskeyword'‚ªcp932‚É‘Î‰‚µ‚«‚ê‚Ä‚¢‚È‚¢‚Ì‚ÅC³
+  " Mac?Å‚Íƒf?t?H???g??'iskeyword'??cp932?É‘Î‰????????Ä‚??È‚??Ì‚ÅC??
   set iskeyword=@,48-57,_,128-167,224-235
 endif
 
@@ -109,29 +111,29 @@ endif
 if has('win32')
   set guifont=Consolas:h9:cSHIFTJIS
   set linespace=1
-  " ˆê•”‚ÌUCS•¶š‚Ì•‚ğ©“®Œv‘ª‚µ‚ÄŒˆ‚ß‚é
+  " ?ê•”??UCS?????Ì•??ğ©“??v?????ÄŒ??ß‚?
   if has('kaoriya')
     set ambiwidth=auto
   endif
 elseif has('xfontset')
-  " UNIX—p (xfontset‚ğg—p)
+  " UNIX?p (xfontset???g?p)
   set guifontset=a14,r14,k14
 endif
 
 if has('multi_byte_ime') || has('xim')
-  " IME ON‚ÌƒJ[ƒ\ƒ‹‚ÌF‚ğİ’è(İ’è—á:‡)
+  " IME ON???ÌƒJ?[?\???ÌF???İ’?(?İ’???:??)
   augroup CursorIMColor
 	  au!
 	  au ColorScheme * highlight CursorIM guibg=Purple guifg=NONE
   augroup END
-  " ‘}“üƒ‚[ƒhEŒŸõƒ‚[ƒh‚Å‚ÌƒfƒtƒHƒ‹ƒg‚ÌIMEó‘Ôİ’è
+  " ?}?????[?h?E???õƒ‚[?h?Å‚Ìƒf?t?H???g??IME???Ôİ’?
   set iminsert=0 imsearch=0
   if has('xim') && has('GUI_GTK')
-    " XIM‚Ì“ü—ÍŠJnƒL[‚ğİ’è:
-    " ‰º‹L‚Ì s-space ‚ÍShift+Space‚ÌˆÓ–¡‚Åkinput2+canna—pİ’è
+    " XIM?Ì“??ÍŠJ?n?L?[???İ’?:
+    " ???L?? s-space ??Shift+Space?ÌˆÓ–???kinput2+canna?p?İ’?
     "set imactivatekey=s-space
   endif
-  " ‘}“üƒ‚[ƒh‚Å‚ÌIMEó‘Ô‚ğ‹L‰¯‚³‚¹‚È‚¢ê‡AŸs‚ÌƒRƒƒ“ƒg‚ğ‰ğœ
+  " ?}?????[?h?Å‚?IME???Ô‚??L???????È‚??ê‡?A???s?ÌƒR?????g??????
   inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 endif
 " }}}
@@ -188,7 +190,7 @@ augroup END
 let $DATE = strftime('%Y%m%d')
 " netrw is always tree view.
 let g:netrw_liststyle = 3
-" CVS‚Æ.‚Ån‚Ü‚éƒtƒ@ƒCƒ‹‚Í•\¦‚µ‚È‚¢
+" CVS??.?Ån?Ü‚??t?@?C???Í•\?????È‚?
 let g:netrw_list_hide = 'CVS,\(^\|\s\s\)\zs\.\S\+'
 " 
 let g:solarized_italic=0
@@ -199,7 +201,7 @@ let g:solarized_italic=0
 augroup highlightIdeographicSpace
   autocmd!
   autocmd Vimenter,ColorScheme * highlight IdeographicSpace term=underline cterm=reverse gui=reverse
-  autocmd VimEnter,WinEnter * match IdeographicSpace /@/
+  autocmd VimEnter,WinEnter * match IdeographicSpace /?@/
 augroup END
 " }}}
 
@@ -249,13 +251,13 @@ augroup END
 " nnoremap ZQ :<C-u>SafeQuit!<CR>
 " 
 " function! s:safeQuit(bang)
-"   " ÅŒã‚Ìƒ^ƒu&ÅŒã‚ÌƒEƒBƒ“ƒhƒE‚Å‚È‚¯‚ê‚ÎI—¹
+"   " ?ÅŒ??Ìƒ^?u&?ÅŒ??ÌƒE?B???h?E?Å‚È‚????ÎI??
 "   if !(tabpagenr('$') == 1 && winnr('$') == 1)
 "     execute 'quit'.a:bang
 "     return
 "   endif
 " 
-"   " I—¹‚·‚é‚©‚Ç‚¤‚©Šm”F
+"   " ?I?????é‚©?Ç‚????m?F
 "   echohl WarningMsg
 "   let l:input = input('Are you sure to quit vim?[y/n]: ')
 "   echohl None
