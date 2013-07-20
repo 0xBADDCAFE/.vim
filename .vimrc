@@ -1,4 +1,4 @@
-
+scriptencoding utf-8
 
 
 " TODO: 
@@ -39,6 +39,10 @@ set backup
 set browsedir=last 				" It effect :browse [cmd]
 set clipboard+=unnamed
 set fileencodings=guess,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,utf-8,euc-jisx0213,euc-jp
+if !has('kaoriya')
+    set fileencodings-=guess
+    set fileencodings+=sjis
+endif
 set formatexpr=autofmt#japanese#formatexpr()
 set formatoptions+=mM
 set helplang=ja
@@ -103,7 +107,7 @@ cd $HOME
 " Env-dependent settings {{{
 " these are almost taken kaoriya settings.
 if has('mac')
-  " Mac?ł̓f?t?H???g??'iskeyword'??cp932?ɑΉ????????Ă??Ȃ??̂ŏC??
+  " Macではデフォルトの'iskeyword'がcp932に対応しきれていないので修正
   set iskeyword=@,48-57,_,128-167,224-235
 endif
 
@@ -111,29 +115,29 @@ endif
 if has('win32')
   set guifont=Consolas:h9:cSHIFTJIS
   set linespace=1
-  " ?ꕔ??UCS?????̕??����??v?????Č??߂?
+  " 一部のUCS文字の幅を自動計測して決める
   if has('kaoriya')
     set ambiwidth=auto
   endif
 elseif has('xfontset')
-  " UNIX?p (xfontset???g?p)
+  " UNIX用 (xfontsetを使用)
   set guifontset=a14,r14,k14
 endif
 
 if has('multi_byte_ime') || has('xim')
-  " IME ON???̃J?[?\???̐F???ݒ?(?ݒ???:??)
+  " IME ON時のカーソルの色を設定(設定例:紫)
   augroup CursorIMColor
 	  au!
 	  au ColorScheme * highlight CursorIM guibg=Purple guifg=NONE
   augroup END
-  " ?}?????[?h?E???����[?h?ł̃f?t?H???g??IME???Ԑݒ?
+  " 挿入モード・検索モードでのデフォルトのIME状態設定
   set iminsert=0 imsearch=0
   if has('xim') && has('GUI_GTK')
-    " XIM?̓??͊J?n?L?[???ݒ?:
-    " ???L?? s-space ??Shift+Space?̈Ӗ???kinput2+canna?p?ݒ?
+    " XIMの入力開始キーを設定:
+    " 下記の s-space はShift+Spaceの意味でkinput2+canna用設定
     "set imactivatekey=s-space
   endif
-  " ?}?????[?h?ł?IME???Ԃ??L???????Ȃ??ꍇ?A???s?̃R?????g??????
+  " 挿入モードでのIME状態を記憶させない場合、次行のコメントを解除
   inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 endif
 " }}}
@@ -190,7 +194,7 @@ augroup END
 let $DATE = strftime('%Y%m%d')
 " netrw is always tree view.
 let g:netrw_liststyle = 3
-" CVS??.?Ŏn?܂??t?@?C???͕\?????Ȃ?
+" CVSと.で始まるファイルは表示しない
 let g:netrw_list_hide = 'CVS,\(^\|\s\s\)\zs\.\S\+'
 " 
 let g:solarized_italic=0
@@ -251,13 +255,13 @@ augroup END
 " nnoremap ZQ :<C-u>SafeQuit!<CR>
 " 
 " function! s:safeQuit(bang)
-"   " ?Ō??̃^?u&?Ō??̃E?B???h?E?łȂ????ΏI??
+"   " 最後のタブ&最後のウィンドウでなければ終了
 "   if !(tabpagenr('$') == 1 && winnr('$') == 1)
 "     execute 'quit'.a:bang
 "     return
 "   endif
 " 
-"   " ?I?????邩?ǂ????m?F
+"   " 終了するかどうか確認
 "   echohl WarningMsg
 "   let l:input = input('Are you sure to quit vim?[y/n]: ')
 "   echohl None
