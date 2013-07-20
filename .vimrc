@@ -38,10 +38,10 @@ set backspace=indent,eol,start
 set backup
 set browsedir=last 				" It effect :browse [cmd]
 set clipboard+=unnamed
-set fileencodings=guess,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,utf-8,euc-jisx0213,euc-jp
-if !has('kaoriya')
-    set fileencodings-=guess
-    set fileencodings+=sjis
+if has('kaoriya')
+    set fileencodings=guess,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,utf-8,euc-jisx0213,euc-jp
+else
+    set fileencodings=utf-8,sjis,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,euc-jisx0213,euc-jp
 endif
 set formatexpr=autofmt#japanese#formatexpr()
 set formatoptions+=mM
