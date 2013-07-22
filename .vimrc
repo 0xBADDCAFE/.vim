@@ -39,9 +39,9 @@ set backup
 set browsedir=last 				" It effect :browse [cmd]
 set clipboard+=unnamed
 if has('kaoriya')
-    set fileencodings=guess,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,utf-8,euc-jisx0213,euc-jp
+  set fileencodings=guess,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,utf-8,euc-jisx0213,euc-jp
 else
-    set fileencodings=utf-8,sjis,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,euc-jisx0213,euc-jp
+  set fileencodings=utf-8,sjis,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,euc-jisx0213,euc-jp
 endif
 set formatexpr=autofmt#japanese#formatexpr()
 set formatoptions+=mM
@@ -127,8 +127,8 @@ endif
 if has('multi_byte_ime') || has('xim')
   " IME ON時のカーソルの色を設定(設定例:紫)
   augroup CursorIMColor
-	  au!
-	  au ColorScheme * highlight CursorIM guibg=Purple guifg=NONE
+    au!
+    au ColorScheme * highlight CursorIM guibg=Purple guifg=NONE
   augroup END
   " 挿入モード・検索モードでのデフォルトのIME状態設定
   set iminsert=0 imsearch=0
@@ -152,10 +152,10 @@ nnoremap j gj
 nnoremap k gk
 nnoremap gj j
 nnoremap gk k
-nnoremap <Up>   <C-y>M
-nnoremap <Down> <C-e>M
-nnoremap <Left> zh
-nnoremap <Right> zl
+nnoremap <Up>    3<C-y>M
+nnoremap <Down>  3<C-e>M
+nnoremap <Left>  3zh
+nnoremap <Right> 3zl
 nnoremap Y y$
 inoremap <C-U> <C-G>u<C-U>
 
@@ -175,10 +175,10 @@ nnoremap <silent> <CR> :<C-u>silent! normal! za<CR><CR>
 
 " autocmds{{{
 augroup vimrc_loading
-	autocmd CmdWinEnter * nnoremap <ESC> <C-c>
-	autocmd CmdWinEnter * inoremap <C-c> <ESC><C-c>
-	autocmd CmdWinLeave * nunmap <ESC>
-	autocmd CmdWinLeave * iunmap <C-c>
+  autocmd CmdWinEnter * nnoremap <ESC> <C-c>
+  autocmd CmdWinEnter * inoremap <C-c> <ESC><C-c>
+  autocmd CmdWinLeave * nunmap <ESC>
+  autocmd CmdWinLeave * iunmap <C-c>
 augroup END
 
 augroup hack234
@@ -282,4 +282,4 @@ source ~/.vim/.vimrc.bundle
 
 let &cpo=s:cpo_save
 unlet s:cpo_save
-" vim: ft=vim:et:sts=4:fdm=marker :
+" vim: ft=vim:et:sw=2:sts=2:fdm=marker :

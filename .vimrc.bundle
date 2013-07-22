@@ -1,3 +1,7 @@
+" plugin_setting_template {{{
+" let g:variable = 0
+" }}}
+
 " ctrlp{{{
 let g:ctrlp_cmd = 'CtrlPMRUFiles'
 " The maximum number of files to scan, set to 0 for no limit: >
@@ -11,11 +15,11 @@ let g:ctrlp_max_height = 16
 let g:ctrlp_clear_cache_on_exit = 0
 " let g:ctrlp_extensions = ['mixed']
 let g:ctrlp_prompt_mappings = {
-  \ 'PrtSelectMove("j")':   ['<tab>', '<down>'],
-  \ 'PrtSelectMove("k")':   ['<s-tab>', '<up>'],
-  \ 'ToggleFocus()':        ['<C-j>'],
-  \ 'PrtExpandDir()':       ['<C-k>'],
-  \ }
+      \ 'PrtSelectMove("j")':   ['<tab>', '<down>'],
+      \ 'PrtSelectMove("k")':   ['<s-tab>', '<up>'],
+      \ 'ToggleFocus()':        ['<C-j>'],
+      \ 'PrtExpandDir()':       ['<C-k>'],
+      \ }
 " }}}
 " powerline{{{
 " move to colorscheme setting.
@@ -28,10 +32,10 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_auto_colors = 0
 augroup IndGuCol
-	au!
-	au VimEnter,colorscheme * highlight IndentGuidesOdd guifg=#073642 guibg=#002b36
-	"solarized base02
-	au VimEnter,colorscheme * highlight IndentGuidesEven guifg=#002b36 guibg=#073642
+  au!
+  au VimEnter,colorscheme * highlight IndentGuidesOdd guifg=#073642 guibg=#002b36
+  "solarized base02
+  au VimEnter,colorscheme * highlight IndentGuidesEven guifg=#002b36 guibg=#073642
 augroup END
 " }}}
 " ag.vim {{{
@@ -41,8 +45,27 @@ augroup END
 " let g:ag_apply_lmappings = 0
 " }}}
 " memolist.vim {{{
-" Don't allow ag.vim to mapping keys in quickfix.
-let g:memolist_memo_suffix = "md"
+" Experimental:
+nnoremap m, :exe "CtrlP" g:memolist_path<CR><F5>
+" NOTE: under section can't show newest list.
+" augroup vimrc_loading
+"   autocmd VimEnter * command! MemoList exe "CtrlP" g:memolist_path
+" augroup END
+" }}}
+" vim-quickrun {{{
+let g:quickrun_config = {}
+let g:quickrun_config._ = {
+      \ 'runner' : 'vimproc',
+      \ 'outputter/buffer/split' : 'botright 10sp',
+      \ 'runmode' : 'async:vimproc'
+      \ }
+
+" TODO: install openbrowser.vim
+" let g:quickrun_config.markdown = {
+"             \ 'type'      : 'markdown/pandoc',
+"             \ 'outputter' : 'browser',
+"             \ 'cmdopt'    : '-s'
+"             \ }
 " }}}
 
 " neobundle settings {{{
@@ -92,20 +115,20 @@ NeoBundleCheck
 " settings need before loading plugins
 " solarized{{{
 if has('gui')
-	augroup solarizedAddHi
-		autocmd!
-		autocmd ColorScheme * highlight SpecialKey guifg=#073642 guibg=NONE "solarized base02
-		autocmd ColorScheme * highlight NonText guifg=#073642 guibg=NONE "solarized base02
-		" autocmd Vimenter,ColorScheme * highlight IdeographicSpace term=underline ctermbg=DarkGreen guibg=#073642
-		autocmd Vimenter,ColorScheme * highlight IdeographicSpace gui=NONE guibg=#073642
-	augroup END
-	" TODO: check the value's effect
-	" let g:solarized_termtrans = 1
-	let Powerline_colorscheme='solarized'
-	colorscheme solarized
+  augroup solarizedAddHi
+    autocmd!
+    autocmd ColorScheme * highlight SpecialKey guifg=#073642 guibg=NONE "solarized base02
+    autocmd ColorScheme * highlight NonText guifg=#073642 guibg=NONE "solarized base02
+    " autocmd Vimenter,ColorScheme * highlight IdeographicSpace term=underline ctermbg=DarkGreen guibg=#073642
+    autocmd Vimenter,ColorScheme * highlight IdeographicSpace gui=NONE guibg=#073642
+  augroup END
+  " TODO: check the value's effect
+  " let g:solarized_termtrans = 1
+  let Powerline_colorscheme='solarized'
+  colorscheme solarized
 else
-	colorscheme midnight
+  colorscheme midnight
 endif
 " }}}
 "
-" vim:ft=vim:fdm=marker:
+" vim: ft=vim:et:sw=2:sts=2:fdm=marker :
