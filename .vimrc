@@ -40,10 +40,11 @@ set browsedir=last 				" It effect :browse [cmd]
 set clipboard+=unnamed
 if has('kaoriya')
   set fileencodings=guess,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,utf-8,euc-jisx0213,euc-jp
+  set formatexpr=autofmt#japanese#formatexpr()
 else
+  set encoding=utf-8
   set fileencodings=utf-8,sjis,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,euc-jisx0213,euc-jp
 endif
-set formatexpr=autofmt#japanese#formatexpr()
 set formatoptions+=mM
 set helplang=ja
 set hidden
@@ -63,9 +64,11 @@ set ruler
 set showcmd
 set showmatch
 set smartcase
+set smartindent
 " Hack #198
 set splitbelow
 set splitright
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tags& tags+=tags;
 set title
 set whichwrap=b,s,h,l,<,>,[,],~
@@ -77,12 +80,14 @@ set wrapscan
 " about visual(or having-number options)===============================
 set laststatus=2
 set showtabline=2
+set softtabstop=2
 set cmdheight=1
 set foldcolumn=1
 set scrolloff=5
 set tabstop=4
 set shiftwidth=4
 set nrformats-=octal
+set visualbell
 set textwidth=0
 if has('gui')
   set lines=48
