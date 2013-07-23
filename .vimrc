@@ -128,7 +128,7 @@ if has('multi_byte_ime') || has('xim')
   " IME ON時のカーソルの色を設定(設定例:紫)
   augroup CursorIMColor
     au!
-    au ColorScheme * highlight CursorIM guibg=Purple guifg=NONE
+    au ColorScheme * highlight CursorIM guibg=#2aa198 guifg=NONE
   augroup END
   " 挿入モード・検索モードでのデフォルトのIME状態設定
   set iminsert=0 imsearch=0
@@ -202,10 +202,32 @@ let g:solarized_italic=0
 
 
 " colorscheme and highlightings{{{
+" COLOR VALUES-----------------{{{ "
+" -------------------------------- "
+" SOLARIZED HEX     16/8 TERMCOL   "
+" --------- ------- ---- --------- "
+" base03    #002b36  8/4 brblack   "
+" base02    #073642  0/4 black     "
+" base01    #586e75 10/7 brgreen   "
+" base00    #657b83 11/7 bryellow  "
+" base0     #839496 12/6 brblue    "
+" base1     #93a1a1 14/4 brcyan    "
+" base2     #eee8d5  7/7 white     "
+" base3     #fdf6e3 15/7 brwhite   "
+" yellow    #b58900  3/3 yellow    "
+" orange    #cb4b16  9/3 brred     "
+" red       #dc322f  1/1 red       "
+" magenta   #d33682  5/5 magenta   "
+" violet    #6c71c4 13/5 brmagenta "
+" blue      #268bd2  4/4 blue      "
+" cyan      #2aa198  6/6 cyan      "
+" green     #859900  2/2 green     "
+" -----------------------------}}} "
+
 augroup highlightIdeographicSpace
   autocmd!
   autocmd Vimenter,ColorScheme * highlight IdeographicSpace term=underline cterm=reverse gui=reverse
-  autocmd VimEnter,WinEnter * match IdeographicSpace /?@/
+  autocmd VimEnter,WinEnter * match IdeographicSpace /　/
 augroup END
 " }}}
 
