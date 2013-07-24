@@ -87,7 +87,6 @@ set scrolloff=5
 set tabstop=4
 set shiftwidth=4
 set nrformats-=octal
-set visualbell
 set textwidth=0
 if has('gui')
   set lines=48
