@@ -123,7 +123,6 @@ if has('gui')
   augroup END
   " TODO: check the value's effect
   " let g:solarized_termtrans = 1
-  let Powerline_colorscheme='solarized'
   colorscheme solarized
 else
   colorscheme midnight
