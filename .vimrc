@@ -104,8 +104,11 @@ if has('unix')
 endif
 set viminfo& viminfo+=n~/.viminfo
 set grepprg=jvgrep
-
+" Experimental: want to have cd with each page.
 cd $HOME
+augroup vimrc_loading
+  autocmd TabEnter * cd %:h
+augroup END
 " }}}
 
 
