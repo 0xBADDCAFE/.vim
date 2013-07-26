@@ -97,7 +97,7 @@ if has('gui')
   set guioptions-=T
 endif
 " with path============================================================
-set runtimepath+=~/.vim/bundle/runtime/
+set runtimepath+=~/.vim/runtime/
 set backupdir=~/.vim/bkfiles
 if has('unix')
   set backupskip=/tmp/*,/private/tmp/*
