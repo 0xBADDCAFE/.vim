@@ -136,7 +136,7 @@ if has('multi_byte_ime') || has('xim')
   " IME ON時のカーソルの色を設定(設定例:紫)
   augroup CursorIMColor
     au!
-    au ColorScheme * highlight CursorIM guibg=#2aa198 guifg=NONE
+    au ColorScheme * highlight CursorIM guibg=#859900 guifg=NONE
   augroup END
   " 挿入モード・検索モードでのデフォルトのIME状態設定
   set iminsert=0 imsearch=0
