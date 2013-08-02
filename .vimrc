@@ -108,7 +108,7 @@ set grepprg=jvgrep
 " Experimental: want to have cd with each page.
 cd $HOME
 augroup vimrc_loading
-  autocmd TabEnter * cd %:h
+  autocmd TabEnter * cd %:p:h
 augroup END
 " }}}
 
@@ -156,7 +156,8 @@ endif
 " bind maps
 noremap Q gq
 " kill <F1> to open help.
-nnoremap <F1> <nop>
+noremap <F1> <nop>
+noremap! <F1> <nop>
 nnoremap j gj
 nnoremap k gk
 nnoremap gj j
@@ -170,7 +171,7 @@ inoremap <C-U> <C-G>u<C-U>
 
 " command maps
 nnoremap <silent> ,ee :<C-u>e ~/.vim/.vimrc<CR>
-nnoremap <silent> ,eh :<C-u>sp ~/.vim/.vimrc<CR>
+nnoremap <silent> ,es :<C-u>sp ~/.vim/.vimrc<CR>
 nnoremap <silent> ,ev :<C-u>vs ~/.vim/.vimrc<CR>
 nnoremap <silent> ,r :<C-u>source $MYVIMRC<CR>
 nnoremap B :ls<CR>:b
