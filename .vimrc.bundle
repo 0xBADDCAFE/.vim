@@ -46,7 +46,7 @@ augroup END
 " memolist.vim {{{
 " In below sentence, <F5> is ineffective.
 " nnoremap m, :exe "CtrlP" g:memolist_path<CR><F5>
-" NOTE: Define after loading plugins.
+" NOTE: To overwrite, define after loading plugins.
 " Experimental: It seems working correctly.
 " Reference: :exe
 augroup vimrc_loading
