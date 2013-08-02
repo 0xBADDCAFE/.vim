@@ -44,12 +44,15 @@ augroup END
 " let g:ag_apply_lmappings = 0
 " }}}
 " memolist.vim {{{
-" Experimental:
-nnoremap m, :exe "CtrlP" g:memolist_path<CR><F5>
-" NOTE: under section can't show newest list.
-" augroup vimrc_loading
-"   autocmd VimEnter * command! MemoList exe "CtrlP" g:memolist_path
-" augroup END
+" In below sentence, <F5> is ineffective.
+" nnoremap m, :exe "CtrlP" g:memolist_path<CR><F5>
+" NOTE: Define after loading plugins.
+" Experimental: It seems working correctly.
+" Reference: :exe
+augroup vimrc_loading
+  autocmd VimEnter * command! MemoList exe "CtrlP" g:memolist_path | CtrlPClearCache
+augroup END
+nnoremap m, :MemoList<CR>
 " }}}
 " vim-quickrun {{{
 let g:quickrun_config = {}
