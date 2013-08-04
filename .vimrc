@@ -193,8 +193,10 @@ augroup END
 
 augroup hack234
   autocmd!
-  autocmd FocusGained * set transparency=248
-  autocmd FocusLost * set transparency=192
+  if has('win32')
+    autocmd FocusGained * set transparency=248
+    autocmd FocusLost * set transparency=192
+  endif
 augroup END
 " }}}
 
