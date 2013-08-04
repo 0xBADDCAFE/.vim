@@ -89,7 +89,7 @@ set tabstop=4
 set shiftwidth=4
 set nrformats-=octal
 set textwidth=0
-if has('gui')
+if has('gui_running')
   set lines=48
   set columns=80
 
