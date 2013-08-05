@@ -116,7 +116,7 @@ NeoBundleCheck
 
 " settings need before loading plugins
 " solarized{{{
-if has('gui')
+if has('gui_runnning')
   augroup solarizedAddHi
     autocmd!
     autocmd ColorScheme * highlight SpecialKey guifg=#073642 guibg=NONE "solarized base02
