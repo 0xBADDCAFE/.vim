@@ -36,7 +36,7 @@ set autoindent
 set background=dark
 set backspace=indent,eol,start
 set backup
-set browsedir=last 				" It effect :browse [cmd]
+set browsedir=last              " It effect :browse [cmd]
 set clipboard+=unnamed
 set fileencoding=utf-8
 if has('kaoriya')
@@ -162,8 +162,8 @@ nnoremap j gj
 nnoremap k gk
 nnoremap gj j
 nnoremap gk k
-nnoremap <Up>    3<C-y>M
-nnoremap <Down>  3<C-e>M
+nnoremap <Up>    3<C-y>
+nnoremap <Down>  3<C-e>
 nnoremap <Left>  3zh
 nnoremap <Right> 3zl
 nnoremap Y y$
@@ -177,7 +177,7 @@ nnoremap <silent> ,r :<C-u>source $MYVIMRC<CR>
 nnoremap B :ls<CR>:b
 nnoremap : q:i
 " It doesn't work incsearch.
-" 	nnoremap / q/i
+"   nnoremap / q/i
 " Experimental: Wrap fold with <CR>.
 nnoremap <silent> <CR> :<C-u>silent! normal! za<CR><CR>
 " }}}
