@@ -188,10 +188,8 @@ nnoremap <silent> <CR> :<C-u>silent! normal! za<CR><CR>
 
 " autocmds{{{
 augroup vimrc_loading
-  autocmd CmdWinEnter * nnoremap <ESC> <C-c>
-  autocmd CmdWinEnter * inoremap <C-c> <ESC><C-c>
-  autocmd CmdWinLeave * nunmap <ESC>
-  autocmd CmdWinLeave * iunmap <C-c>
+  autocmd CmdWinEnter * nnoremap <buffer><silent> q :<C-u>quit<CR>
+  autocmd CmdWinEnter * nnoremap <buffer><silent> <ESC> :<C-u>quit<CR>
 augroup END
 
 " binary XXD editing mode

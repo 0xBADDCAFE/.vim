@@ -23,6 +23,8 @@ let g:ctrlp_prompt_mappings = {
 " }}}
 " airline {{{
   let g:airline_theme='solarized_rev'
+  let g:airline_detect_iminsert=1
+  let g:airline_detect_whitespace=0 "disabled
 " }}}
 " indent-guide {{{
 let g:indent_guides_enable_on_vim_startup = 1
