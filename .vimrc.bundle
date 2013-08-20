@@ -15,10 +15,10 @@ let g:ctrlp_max_height = 16
 let g:ctrlp_clear_cache_on_exit = 0
 " let g:ctrlp_extensions = ['mixed']
 let g:ctrlp_prompt_mappings = {
-      \ 'PrtSelectMove("j")':   ['<tab>', '<down>'],
-      \ 'PrtSelectMove("k")':   ['<s-tab>', '<up>'],
-      \ 'ToggleFocus()':        ['<C-j>'],
-      \ 'PrtExpandDir()':       ['<C-k>'],
+      \ 'PrtSelectMove("j")':   ['<C-j>', '<tab>', '<down>'],
+      \ 'PrtSelectMove("k")':   ['<C-k>', '<s-tab>', '<up>'],
+      \ 'ToggleFocus()':        ['<NOP>'],
+      \ 'PrtExpandDir()':       ['<NOP>'],
       \ }
 " }}}
 " airline {{{
