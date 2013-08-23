@@ -34,7 +34,7 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_auto_colors = 0
 augroup IndGuCol
   au!
-  au VimEnter,colorscheme * highlight IndentGuidesOdd guifg=#073642 guibg=#002b36
+  au VimEnter,colorscheme * highlight def link IndentGuidesOdd Normal
   "solarized base02
   au VimEnter,colorscheme * highlight IndentGuidesEven guifg=#002b36 guibg=#073642
 augroup END
@@ -93,7 +93,6 @@ NeoBundle 'Shougo/vimproc'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle '0xBADDCAFE/midnight.vim'
@@ -125,8 +124,6 @@ if has('gui_running')
     autocmd!
     autocmd ColorScheme * highlight SpecialKey guifg=#073642 guibg=NONE
     autocmd ColorScheme * highlight NonText guifg=#073642 guibg=NONE
-    " autocmd Vimenter,ColorScheme * highlight IdeographicSpace term=underline ctermbg=DarkGreen guibg=#073642
-    autocmd Vimenter,ColorScheme * highlight IdeographicSpace gui=NONE guibg=#586e75
   augroup END
   " TODO: check the value's effect
   " let g:solarized_termtrans = 1
