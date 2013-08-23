@@ -105,7 +105,7 @@ if has('unix')
   set backupskip=/tmp/*,/private/tmp/*
 endif
 set viminfo& viminfo+=n~/.viminfo
-set grepprg=jvgrep
+set grepprg=jvgrep\ -iR
 " Experimental: want to have cd with each page.
 cd $HOME
 augroup vimrc_loading
