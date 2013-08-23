@@ -193,16 +193,17 @@ augroup vimrc_loading
   autocmd CmdWinEnter * nnoremap <buffer><silent> <ESC> :<C-u>quit<CR>
 augroup END
 
-" binary XXD editing mode
-augroup BinaryXXD
-  autocmd!
-  autocmd BufReadPre  *.bin let &binary =1
-  autocmd BufReadPost * if &binary | silent %!xxd -g 1
-  autocmd BufReadPost * set ft=xxd | endif
-  autocmd BufWritePre * if &binary | %!xxd -r | endif
-  autocmd BufWritePost * if &binary | silent %!xxd -g 1
-  autocmd BufWritePost * set nomod | endif
-augroup END
+" " binary XXD editing mode
+" FIXME: if enable these sentences, doesn't work Autodate.
+" augroup BinaryXXD
+"   autocmd!
+"   autocmd BufReadPre  *.bin let &binary =1
+"   autocmd BufReadPost * if &binary | silent %!xxd -g 1
+"   autocmd BufReadPost * set ft=xxd | endif
+"   autocmd BufWritePre * if &binary | %!xxd -r | endif
+"   autocmd BufWritePost * if &binary | silent %!xxd -g 1
+"   autocmd BufWritePost * set nomod | endif
+" augroup END
 
 augroup hack234
   autocmd!
