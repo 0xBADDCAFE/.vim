@@ -82,7 +82,7 @@ set wrapscan
 " about visual(or having-number options)===============================
 set laststatus=2
 set showtabline=2
-set softtabstop=2
+set softtabstop=4
 set cmdheight=1
 set foldcolumn=1
 set scrolloff=5
@@ -109,7 +109,7 @@ set grepprg=jvgrep\ -iR
 " Experimental: want to have cd with each page.
 cd $HOME
 augroup vimrc_loading
-  autocmd TabEnter * cd %:p:h
+  autocmd VimEnter,TabEnter * cd %:p:h
 augroup END
 " }}}
 
@@ -161,10 +161,10 @@ noremap Q gq
 " kill <F1> to open help.
 noremap <F1> <nop>
 noremap! <F1> <nop>
-nnoremap j gj
-nnoremap k gk
-nnoremap gj j
-nnoremap gk k
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
 nnoremap <Up>    3<C-y>
 nnoremap <Down>  3<C-e>
 nnoremap <Left>  3zh

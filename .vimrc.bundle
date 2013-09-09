@@ -91,6 +91,7 @@ NeoBundle 'Shougo/vimproc'
 
 " My Bundles here:{{{
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'koron/nyancat-vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'chriskempson/base16-vim'
