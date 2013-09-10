@@ -88,7 +88,7 @@ set foldcolumn=1
 set scrolloff=5
 set tabstop=4
 set shiftwidth=4
-set nrformats-=octal
+set nrformats=hex,alpha
 set textwidth=0
 if has('gui_running')
   set lines=48
