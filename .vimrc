@@ -94,9 +94,8 @@ if has('gui_running')
   set lines=48
   set columns=80
 
-  set guioptions-=e
-  set guioptions-=m
-  set guioptions-=T
+  " don't want gui parts
+  set guioptions=
 endif
 " with path============================================================
 set runtimepath+=~/.vim/runtime/
