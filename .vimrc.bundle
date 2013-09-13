@@ -26,7 +26,6 @@ let g:ctrlp_prompt_mappings = {
       \ }
 " }}}
 " airline {{{
-  let g:airline_theme='solarized_rev'
   let g:airline_detect_iminsert=1
   let g:airline_detect_whitespace=0 "disabled
 " }}}
@@ -133,8 +132,10 @@ if has('gui_running')
   augroup END
   " TODO: check the value's effect
   " let g:solarized_termtrans = 1
+  let g:airline_theme='solarized_rev'
   colorscheme solarized
 else
+  let g:airline_theme='light'
   colorscheme midnight
 endif
 " }}}
