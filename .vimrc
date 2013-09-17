@@ -192,6 +192,8 @@ nnoremap <silent> <CR> :<C-u>silent! normal! za<CR><CR>
 augroup vimrc_loading
   autocmd CmdWinEnter * nnoremap <buffer><silent> q :<C-u>quit<CR>
   autocmd CmdWinEnter * nnoremap <buffer><silent> <ESC> :<C-u>quit<CR>
+  autocmd CmdWinEnter * setlocal backspace-=eol
+  autocmd CmdWinLeave * setlocal backspace+=eol
 augroup END
 
 " " binary XXD editing mode

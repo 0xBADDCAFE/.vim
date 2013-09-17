@@ -140,7 +140,7 @@ if has('gui_running')
   let g:airline_theme='ubaryd'
   colorscheme ubaryd
   " FIXME:this setting is temporary.
-  hi Todo guibg=#C7B386
+  hi Todo guifg=#141413 guibg=#C7B386
 else
   let g:airline_theme='light'
   colorscheme midnight
