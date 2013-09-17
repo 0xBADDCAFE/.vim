@@ -31,7 +31,7 @@ augroup END
 
 
 " set options {{{
-" common settings======================================================
+" common settings=======================================================
 set autoindent
 set background=dark
 set backspace=indent,eol,start
@@ -79,7 +79,7 @@ set virtualedit=block
 set wildmenu
 set wildmode=longest:list,full
 set wrapscan
-" about appearance(or having-number options)===============================
+" about appearance(or having-number options)============================
 set laststatus=2
 set showtabline=2
 set softtabstop=4
@@ -97,7 +97,7 @@ if has('gui_running')
   " don't want gui parts
   set guioptions=
 endif
-" with path============================================================
+" with path=============================================================
 set runtimepath+=~/.vim/runtime/
 set backupdir=~/.vim/bkfiles
 if has('unix')
