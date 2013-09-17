@@ -79,7 +79,7 @@ set virtualedit=block
 set wildmenu
 set wildmode=longest:list,full
 set wrapscan
-" about visual(or having-number options)===============================
+" about appearance(or having-number options)===============================
 set laststatus=2
 set showtabline=2
 set softtabstop=4
