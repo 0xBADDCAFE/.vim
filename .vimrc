@@ -1,7 +1,7 @@
 scriptencoding utf-8
 
 
-" TODO: 
+" TODO:
 " - on mac settings(i.e. transparency).
 " - folder existing check.
 " - Make togglable setting to scroll arrow key.
@@ -114,7 +114,24 @@ augroup END
 
 
 " Env-dependent settings {{{
-" these are almost taken kaoriya settings.
+" IME Settings{{{
+if has('multi_byte_ime') || has('xim')
+  set iminsert=0
+  set imsearch=0
+  augroup CursorIMColor
+    au!
+    au ColorScheme * highlight def link CursorIM Search
+  augroup END
+  if has('xim') && has('GUI_GTK')
+    " set starting XIM input keybind:
+    " set imactivatekey=s-space
+  endif
+  " start insert mode with no IME input.
+  inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
+endif
+" }}}
+"
+" these are almost taken kaoriya settings.{{{
 if has('mac')
   " Macではデフォルトの'iskeyword'がcp932に対応しきれていないので修正
   set iskeyword=@,48-57,_,128-167,224-235
@@ -134,23 +151,7 @@ elseif has('xfontset')
   " UNIX用 (xfontsetを使用)
   set guifontset=a14,r14,k14
 endif
-
-if has('multi_byte_ime') || has('xim')
-  " IME ON時のカーソルの色を設定(設定例:紫)
-  augroup CursorIMColor
-    au!
-    au ColorScheme * highlight CursorIM guibg=#859900 guifg=NONE
-  augroup END
-  " 挿入モード・検索モードでのデフォルトのIME状態設定
-  set iminsert=0 imsearch=0
-  if has('xim') && has('GUI_GTK')
-    " XIMの入力開始キーを設定:
-    " 下記の s-space はShift+Spaceの意味でkinput2+canna用設定
-    "set imactivatekey=s-space
-  endif
-  " 挿入モードでのIME状態を記憶させない場合、次行のコメントを解除
-  inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
-endif
+" }}}
 " }}}
 
 
