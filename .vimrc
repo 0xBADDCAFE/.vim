@@ -219,7 +219,7 @@ augroup END
 
 
 " setting values{{{
-" TODO: consider anotyer smart way.
+" TODO: consider another smart way.
 let $DATE = strftime('%Y%m%d')
 " netrw is always tree view.
 let g:netrw_liststyle = 3
