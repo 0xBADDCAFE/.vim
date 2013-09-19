@@ -53,8 +53,6 @@ set hidden
 set history=50
 set hlsearch
 set ignorecase
-set iminsert=0
-set imsearch=0
 set incsearch
 set list
 set lcs=tab:/.,trail:_
@@ -86,6 +84,8 @@ set softtabstop=4
 set cmdheight=1
 set foldcolumn=1
 set scrolloff=5
+set sidescroll=1
+set sidescrolloff=10
 set tabstop=4
 set shiftwidth=4
 set nrformats=hex,alpha
