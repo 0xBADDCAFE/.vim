@@ -76,6 +76,10 @@ let g:quickrun_config = {}
 "       \ 'cmdopt'    : '-s'
 "       \ }
 " }}}
+" columnjump {{{
+nmap <c-k> <Plug>(columnjump-backward)
+nmap <c-j> <Plug>(columnjump-forward)
+" }}}
 
 " neobundle settings {{{
 
@@ -109,6 +113,7 @@ NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'thinca/vim-scouter'
+NeoBundle 'deris/columnjump'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'netrw.vim'
 " }}}
