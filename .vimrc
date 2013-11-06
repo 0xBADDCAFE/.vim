@@ -69,7 +69,7 @@ set smartindent
 set splitbelow
 set splitright
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-set tags& tags+=tags;
+set tags& tags+=./tags;tags;
 set title
 set whichwrap=b,s,h,l,<,>,[,],~
 set nowrap
@@ -107,9 +107,6 @@ set viminfo& viminfo+=n~/.viminfo
 set grepprg=jvgrep\ -iR
 " Experimental: want to have cd with each page.
 cd $HOME
-augroup vimrc_loading
-  autocmd VimEnter,TabEnter * cd %:p:h
-augroup END
 " }}}
 
 
