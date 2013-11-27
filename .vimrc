@@ -39,6 +39,7 @@ set backup
 set browsedir=last              " It effect :browse [cmd]
 set clipboard+=unnamed
 set diffopt=filler,iwhite,horizontal
+set expandtab
 set fileencoding=utf-8
 if has('kaoriya')
   set fileencodings=guess,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,utf-8,euc-jisx0213,euc-jp
@@ -80,14 +81,14 @@ set wrapscan
 " about appearance(or having-number options)============================
 set laststatus=2
 set showtabline=2
-set softtabstop=4
+set softtabstop=2
 set cmdheight=1
 set foldcolumn=1
 set scrolloff=5
 set sidescroll=1
 set sidescrolloff=10
 set tabstop=4
-set shiftwidth=4
+set shiftwidth=2
 set nrformats=hex,alpha
 set textwidth=0
 if has('gui_running')
