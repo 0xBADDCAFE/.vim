@@ -91,6 +91,13 @@ let g:neobundle#types#git#default_protocol = 'https'
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
+" If singleton, don't load other scripts.{{{
+NeoBundle 'thinca/vim-singleton'
+" Installation check.
+NeoBundleCheck
+call singleton#enable()
+" }}}
+
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
