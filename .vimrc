@@ -66,7 +66,6 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 set tags& tags+=./tags;tags;
 set title
 set whichwrap=b,s,h,l,<,>,[,],~
-set nowrap
 set virtualedit=block
 set wildmenu
 set wildmode=longest:list,full
@@ -78,8 +77,11 @@ else
   set encoding=utf-8
   set fileencodings=utf-8,sjis,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,euc-jisx0213,euc-jp
 endif
-if has('breakindent')
-  " FIXME: version.c is not changed.
+if exists('+breakindent')
+  set wrap
+  set breakindent
+else
+  set nowrap
 endif
 " about appearance(or having-number options)============================
 set laststatus=2
