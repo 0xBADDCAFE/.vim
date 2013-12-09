@@ -93,8 +93,6 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 
 " If singleton, don't load other scripts.{{{
 NeoBundle 'thinca/vim-singleton'
-" Installation check.
-NeoBundleCheck
 call singleton#enable()
 " }}}
 

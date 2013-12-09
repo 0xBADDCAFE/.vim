@@ -41,13 +41,6 @@ set clipboard+=unnamed
 set diffopt=filler,iwhite,horizontal
 set expandtab
 set fileencoding=utf-8
-if has('kaoriya')
-  set fileencodings=guess,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,utf-8,euc-jisx0213,euc-jp
-  set formatexpr=autofmt#japanese#formatexpr()
-else
-  set encoding=utf-8
-  set fileencodings=utf-8,sjis,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,euc-jisx0213,euc-jp
-endif
 set formatoptions+=mM
 set helplang=ja
 set hidden
@@ -78,6 +71,16 @@ set virtualedit=block
 set wildmenu
 set wildmode=longest:list,full
 set wrapscan
+if has('kaoriya')
+  set fileencodings=guess,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,utf-8,euc-jisx0213,euc-jp
+  set formatexpr=autofmt#japanese#formatexpr()
+else
+  set encoding=utf-8
+  set fileencodings=utf-8,sjis,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,euc-jisx0213,euc-jp
+endif
+if has('breakindent')
+  " FIXME: version.c is not changed.
+endif
 " about appearance(or having-number options)============================
 set laststatus=2
 set showtabline=2
@@ -94,19 +97,18 @@ set textwidth=0
 if has('gui_running')
   set lines=48
   set columns=80
-
   " don't want gui parts
   set guioptions=
 endif
 " with path=============================================================
 set runtimepath+=~/.vim/runtime/
 set backupdir=~/.vim/bkfiles
+set viminfo& viminfo+=n~/.viminfo
+set grepprg=jvgrep\ -iR
 if has('unix')
   set backupskip=/tmp/*,/private/tmp/*
 endif
-set viminfo& viminfo+=n~/.viminfo
-set grepprg=jvgrep\ -iR
-" Experimental: want to have cd with each page.
+
 cd $HOME
 " }}}
 
@@ -195,7 +197,7 @@ augroup vimrc_loading
 augroup END
 
 " " binary XXD editing mode
-" FIXME: if enable these sentences, doesn't work Autodate.
+" " FIXME: if enable these sentences, doesn't work Autodate.
 " augroup BinaryXXD
 "   autocmd!
 "   autocmd BufReadPre  *.bin let &binary =1
