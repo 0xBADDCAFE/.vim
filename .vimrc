@@ -198,6 +198,11 @@ augroup vimrc_loading
   autocmd CmdWinLeave * setlocal backspace+=eol
 augroup END
 
+" Experimental: smart lcd
+augroup vimrc_loading
+  autocmd BufReadPost * if @# == '' | cd %:p:h | endif
+augroup END
+
 " " binary XXD editing mode
 " " FIXME: if enable these sentences, doesn't work Autodate.
 " augroup BinaryXXD
