@@ -273,6 +273,7 @@ augroup END
 " bdelete/bwipeout without break window layout.
 command! BDelete b#|bd#
 command! BWipeout enew|bw#
+command! W set wrap!
 "
 " These are util functions almost taken from deris/config/.vimrc
 " check https://github.com/deris/Config/blob/master/.vimrc
