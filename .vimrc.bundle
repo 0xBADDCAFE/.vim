@@ -112,16 +112,17 @@ if !has('kaoriya')
         \ }
 endif
 " My Bundles here:{{{
+NeoBundle 'mattn/habatobi-vim'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'koron/nyancat-vim'
 NeoBundle 'tyru/restart.vim'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'tpope/vim-markdown'
 NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle '0xBADDCAFE/midnight.vim'
+NeoBundle '0xBADDCAFE/vim-markdown'
 NeoBundle 'epmatsw/ag.vim'
 NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'thinca/vim-quickrun'

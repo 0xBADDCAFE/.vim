@@ -48,6 +48,7 @@ set history=50
 set hlsearch
 set ignorecase
 set incsearch
+set linespace=0
 set list
 set lcs=tab:/.,trail:_
 set mouse=a
@@ -97,8 +98,8 @@ set shiftwidth=2
 set nrformats=hex,alpha
 set textwidth=0
 if has('gui_running')
-  set lines=48
-  set columns=80
+  set lines=52
+  set columns=84
   " don't want gui parts
   set guioptions=
 endif
@@ -142,7 +143,7 @@ endif
 " font setting(based on kaoriya)
 if has('win32')
   set guifont=Consolas:h9:cSHIFTJIS
-  set linespace=1
+  " set linespace=1
   " 一部のUCS文字の幅を自動計測して決める
   if has('kaoriya')
     set ambiwidth=auto
@@ -273,7 +274,7 @@ augroup END
 " bdelete/bwipeout without break window layout.
 command! BDelete b#|bd#
 command! BWipeout enew|bw#
-command! W set wrap!
+command! W set wrap!|set wrap?
 "
 " These are util functions almost taken from deris/config/.vimrc
 " check https://github.com/deris/Config/blob/master/.vimrc
