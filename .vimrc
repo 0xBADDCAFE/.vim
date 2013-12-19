@@ -197,6 +197,8 @@ augroup vimrc_loading
   autocmd CmdWinEnter * nnoremap <buffer><silent> q :<C-u>quit<CR>
   autocmd CmdWinEnter * nnoremap <buffer><silent> <ESC> :<C-u>quit<CR>
   autocmd CmdWinEnter * setlocal backspace-=eol
+  autocmd CmdWinEnter * setlocal completeopt+=longest
+  autocmd CmdwinLeave * setlocal completeopt-=longest
   autocmd CmdWinLeave * setlocal backspace+=eol
 augroup END
 
