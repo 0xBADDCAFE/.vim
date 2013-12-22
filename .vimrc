@@ -219,13 +219,16 @@ augroup END
 "   autocmd BufWritePost * set nomod | endif
 " augroup END
 
-augroup hack234
-  autocmd!
-  if has('win32')
-    autocmd FocusGained * set transparency=248
-    autocmd FocusLost * set transparency=192
-  endif
-augroup END
+if exists('+transparency')
+  augroup hack234
+    autocmd!
+    " TODO: on mac settings
+    if has('win32')
+      autocmd FocusGained * set transparency=248
+      autocmd FocusLost * set transparency=192
+    endif
+  augroup END
+endif
 " }}}
 
 
