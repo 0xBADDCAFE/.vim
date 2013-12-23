@@ -40,7 +40,6 @@ set browsedir=last              " It effect :browse [cmd]
 set clipboard+=unnamed
 set diffopt=filler,iwhite,horizontal
 set expandtab
-set fileencoding=utf-8
 set formatoptions+=mM
 set helplang=ja
 set hidden
@@ -72,6 +71,9 @@ set virtualedit=block
 set wildmenu
 set wildmode=longest:list,full
 set wrapscan
+if &fileencoding == ''
+  set fileencoding=utf-8
+endif
 if has('kaoriya')
   set fileencodings=guess,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,utf-8,euc-jisx0213,euc-jp
   set formatexpr=autofmt#japanese#formatexpr()
