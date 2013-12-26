@@ -10,15 +10,19 @@ scriptencoding utf-8
 " Note:
 " Experimental:
 
-version 6.0
-if &cp | set nocp | endif
-let s:cpo_save=&cpo
-set cpo&vim
+" version 6.0
+" if &cp | set nocp | endif
+" let s:cpo_save=&cpo
+" set cpo&vim
 
 " ready for settings{{{
 
-" needs to set before :syntax on and filetype on, plugin on.
-" set encoding=cp932
+" needs to set before :syntax on and filetype, plugin on.
+set encoding=utf-8
+" enable below sentence if I will need.
+" source $VIMRUNTIME\delmenu.vim
+" set langmenu=ja_JP.utf-8
+" source $VIMRUNTIME\menu.vim
 
 syntax on
 filetype plugin indent on
@@ -145,6 +149,7 @@ endif
 
 " font setting(based on kaoriya)
 if has('win32')
+  " set guifont=Consolas:h9:cSHIFTJIS
   set guifont=Consolas:h9:cSHIFTJIS
   " set linespace=1
   " 一部のUCS文字の幅を自動計測して決める
@@ -353,6 +358,6 @@ command! W setl wrap!|setl wrap?
 " plugin setting file
 source ~/.vim/.vimrc.bundle
 
-let &cpo=s:cpo_save
-unlet s:cpo_save
+" let &cpo=s:cpo_save
+" unlet s:cpo_save
 " vim: ft=vim:et:sw=2:sts=2:fdm=marker :
