@@ -203,6 +203,7 @@ nnoremap <silent> <CR> :<C-u>silent! normal! za<CR><CR>
 augroup vimrc_loading
   autocmd CmdWinEnter * nnoremap <buffer><silent> q :<C-u>quit<CR>
   autocmd CmdWinEnter * nnoremap <buffer><silent> <ESC> :<C-u>quit<CR>
+  autocmd CmdWinEnter * inoremap <buffer><silent> <C-r><C-w> <C-c><C-r><C-w><C-f>i
   autocmd CmdWinEnter * setlocal backspace-=eol
   autocmd CmdWinEnter * setlocal completeopt+=longest
   autocmd CmdwinLeave * setlocal completeopt-=longest
