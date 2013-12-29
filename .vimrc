@@ -75,9 +75,6 @@ set virtualedit=block
 set wildmenu
 set wildmode=longest:list,full
 set wrapscan
-if &fileencoding == ''
-  set fileencoding=utf-8
-endif
 if has('kaoriya')
   set fileencodings=guess,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,utf-8,euc-jisx0213,euc-jp
   set formatexpr=autofmt#japanese#formatexpr()
