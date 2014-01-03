@@ -111,7 +111,9 @@ endif
 set runtimepath+=~/.vim/runtime/
 set backupdir=~/.vim/bkfiles
 set viminfo& viminfo+=n~/.viminfo
-set grepprg=jvgrep\ -iR
+if executable('jvgrep')
+  set grepprg=jvgrep\ -iR
+endif
 if has('unix')
   set backupskip=/tmp/*,/private/tmp/*
 endif
