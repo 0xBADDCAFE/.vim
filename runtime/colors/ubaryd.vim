@@ -278,6 +278,13 @@ call s:HL('Debug',  'snow',   '',      'bold')
 call s:HL('Ignore', 'gravel', '',      '')
 
 " }}}
+" TabLines {{{
+
+call s:HL('TabLine', 'toffee', 'darkgravel')
+" call s:HL('TabLineSel', 'bleaksand')
+call s:HL('TabLineFill', 'bleaksand', '')
+
+" }}}
 " Completion Menu {{{
 
 call s:HL('Pmenu', 'plain', 'deepergravel')

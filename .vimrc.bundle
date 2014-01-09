@@ -25,6 +25,11 @@ let g:ctrlp_prompt_mappings = {
       \ 'PrtExpandDir()':       ['<NOP>'],
       \ }
 " }}}
+" restart {{{
+" if enable restart session, leave session files in
+" current dir...
+" let g:restart_sessionoptions = &sessionoptions
+" }}}
 " airline {{{
   let g:airline_detect_iminsert=1
   let g:airline_detect_whitespace=0 "disabled
@@ -94,8 +99,10 @@ let g:neobundle#types#git#default_protocol = 'https'
 call neobundle#rc(expand('~/.vim/bundle/'))
 
 " If singleton, don't load other scripts.{{{
-NeoBundle 'thinca/vim-singleton'
-call singleton#enable()
+if has('clientserver')
+  NeoBundle 'thinca/vim-singleton'
+  call singleton#enable()
+endif
 " }}}
 
 " Let NeoBundle manage NeoBundle
