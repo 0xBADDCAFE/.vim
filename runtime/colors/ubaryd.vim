@@ -280,9 +280,9 @@ call s:HL('Ignore', 'gravel', '',      '')
 " }}}
 " TabLines {{{
 
-call s:HL('TabLine', 'toffee', 'darkgravel')
-" call s:HL('TabLineSel', 'bleaksand')
-call s:HL('TabLineFill', 'bleaksand', '')
+call s:HL('TabLine', 'mediumsand', 'blackgravel', 'underline')
+call s:HL('TabLineSel', 'toffee', '', 'none')
+call s:HL('TabLineFill', 'mediumsand', 'blackgravel', 'underline')
 
 " }}}
 " Completion Menu {{{
