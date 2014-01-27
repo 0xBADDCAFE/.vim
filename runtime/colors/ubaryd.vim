@@ -209,7 +209,8 @@ call s:HL('Tag', '', '', 'bold')
 
 call s:HL('LineNr',     'mediumsand', s:gutter)
 call s:HL('SignColumn', '',             s:gutter)
-call s:HL('FoldColumn', 'mediumsand', s:gutter)
+call s:HL('FoldColumn', 'deepgravel', s:gutter)
+" call s:HL('FoldColumn', 'mediumsand', s:gutter)
 
 " }}}
 " Cursor {{{
