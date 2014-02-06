@@ -276,7 +276,7 @@ let g:solarized_italic=0
 
 augroup highlightIdeographicSpace
   autocmd!
-  autocmd Vimenter,ColorScheme * highlight def link IdeographicSpace Visual
+  autocmd VimEnter,ColorScheme * highlight def link IdeographicSpace Visual
   autocmd VimEnter,WinEnter * match IdeographicSpace /　/
 augroup END
 " }}}
