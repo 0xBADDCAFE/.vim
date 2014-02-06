@@ -39,19 +39,19 @@ let g:airline_section_z='%3p%% %{g:airline_symbols.linenr}%#__accent_bold#%4l%#_
 " let g:airline#extensions#tabline#enabled = 1
 " }}}
 " indent-guide {{{
-if has('gui_running')
-  let g:indent_guides_enable_on_vim_startup = 1
-  " let g:indent_guides_guide_size = 1
-  " let g:indent_guides_color_change_percent = 2
-  let g:indent_guides_start_level = 2
-  let g:indent_guides_auto_colors = 0
-  augroup IndGuCol
-    au!
-    au VimEnter,colorscheme * highlight def link IndentGuidesOdd Normal
-    "solarized base02
-    au VimEnter,colorscheme * highlight def link IndentGuidesEven FoldColumn
-  augroup END
-endif
+" if has('gui_running')
+"   let g:indent_guides_enable_on_vim_startup = 1
+"   " let g:indent_guides_guide_size = 1
+"   " let g:indent_guides_color_change_percent = 2
+"   let g:indent_guides_start_level = 2
+"   let g:indent_guides_auto_colors = 0
+"   augroup IndGuCol
+"     au!
+"     au VimEnter,colorscheme * highlight def link IndentGuidesOdd Normal
+"     "solarized base02
+"     au VimEnter,colorscheme * highlight def link IndentGuidesEven FoldColumn
+"   augroup END
+" endif
 " }}}
 " ag.vim {{{
 " Don't allow ag.vim to mapping keys in quickfix(if
@@ -135,14 +135,14 @@ NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'cocopon/iceberg.vim'
 NeoBundle '0xBADDCAFE/midnight.vim'
 NeoBundle '0xBADDCAFE/vim-markdown'
-NeoBundle 'epmatsw/ag.vim'
 NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'thinca/vim-scouter'
 NeoBundle 'deris/columnjump'
 NeoBundle 'sjl/badwolf'
-NeoBundle 'nathanaelkane/vim-indent-guides'
+" NeoBundle 'epmatsw/ag.vim'
+" NeoBundle 'nathanaelkane/vim-indent-guides'
 " }}}
 
 filetype plugin indent on     " Required!
