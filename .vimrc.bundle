@@ -126,6 +126,7 @@ endif
 NeoBundle 'mattn/habatobi-vim'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'koron/nyancat-vim'
+NeoBundle 'kana/vim-tabpagecd'
 NeoBundle 'tyru/restart.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-sleuth'
