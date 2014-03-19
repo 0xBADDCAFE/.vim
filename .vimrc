@@ -1,6 +1,3 @@
-scriptencoding utf-8
-
-
 " TODO:
 " - on mac settings(i.e. transparency).
 " - folder existing check.
@@ -17,12 +14,16 @@ scriptencoding utf-8
 
 " ready for settings{{{
 
-" needs to set before :syntax on and filetype, plugin on.
-set encoding=utf-8
+" if CUI on windows, not set encoding.
+if has('win32') && has('gui_running')
+  " needs to set before :syntax on and filetype, plugin on.
+  set encoding=utf-8
+endif
 " enable below sentence if I will need.
 " source $VIMRUNTIME\delmenu.vim
 " set langmenu=ja_JP.utf-8
 " source $VIMRUNTIME\menu.vim
+scriptencoding utf-8
 
 syntax on
 filetype plugin indent on
