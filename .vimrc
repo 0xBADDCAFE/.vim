@@ -54,7 +54,11 @@ set ignorecase
 set incsearch
 set linespace=0
 set list
-set lcs=tab:/.,trail:_
+if &encoding == 'utf-8'
+  set listchars=tab:‣\ ,trail:_
+else
+  set listchars=tab:/.,trail:_
+endif
 set mouse=a
 set nomousefocus
 set mousehide
