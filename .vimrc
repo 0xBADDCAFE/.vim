@@ -107,7 +107,7 @@ set shiftwidth=2
 set nrformats=hex,alpha
 set textwidth=0
 if has('gui_running')
-  set lines=52
+  set lines=48
   set columns=84
   " don't want gui parts
   set guioptions=
@@ -117,7 +117,7 @@ set runtimepath+=~/.vim/runtime/
 set backupdir=~/.vim/bkfiles
 set viminfo& viminfo+=n~/.viminfo
 if executable('jvgrep')
-  set grepprg=jvgrep\ -iR
+  set grepprg=jvgrep\ -irR
 endif
 if has('unix')
   set backupskip=/tmp/*,/private/tmp/*
@@ -154,7 +154,7 @@ endif
 " font setting(based on kaoriya)
 if has('win32')
   " set guifont=Consolas:h9:cSHIFTJIS
-  set guifont=Consolas:h9:cSHIFTJIS
+  set guifont=Consolas:h10:cSHIFTJIS
   " set linespace=1
   " 一部のUCS文字の幅を自動計測して決める
   if has('kaoriya')
