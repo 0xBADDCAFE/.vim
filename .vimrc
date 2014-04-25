@@ -152,11 +152,9 @@ endif
 
 " font setting(based on kaoriya)
 if has('win32')
-  " set guifont=Consolas:h9:cSHIFTJIS
   set guifont=Consolas:h10:cSHIFTJIS
-  " set linespace=1
   " 一部のUCS文字の幅を自動計測して決める
-  if has('kaoriya')
+  if has('kaoriya') && has('gui_running')
     set ambiwidth=auto
   endif
 elseif has('gui_macvim')
