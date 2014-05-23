@@ -75,6 +75,7 @@ set splitright
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tags& tags+=./tags;tags;
 set title
+set noundofile
 set whichwrap=b,s,h,l,<,>,[,],~
 set virtualedit=block
 set wildmenu
