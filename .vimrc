@@ -117,7 +117,7 @@ set runtimepath+=~/.vim/runtime/
 set backupdir=~/.vim/bkfiles
 set viminfo& viminfo+=n~/.viminfo
 if executable('jvgrep')
-  set grepprg=jvgrep\ -irR
+  set grepprg=jvgrep\ -irR\ --color=never
 endif
 if has('unix')
   set backupskip=/tmp/*,/private/tmp/*
@@ -221,7 +221,7 @@ augroup END
 
 " Experimental: smart lcd
 augroup vimrc_loading
-  autocmd BufReadPost * if @# == '' | cd %:p:h | endif
+  autocmd BufReadPost * if @# == '' && getcwd() == $HOME | cd %:p:h | endif
 augroup END
 
 " " binary XXD editing mode
