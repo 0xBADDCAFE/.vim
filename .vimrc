@@ -7,11 +7,6 @@
 " Note:
 " Experimental:
 
-" version 6.0
-" if &cp | set nocp | endif
-" let s:cpo_save=&cpo
-" set cpo&vim
-
 " ready for settings{{{
 
 " if CUI on windows, not set encoding.
@@ -368,6 +363,4 @@ command! W setl wrap! wrap?
 " plugin setting file
 source ~/.vim/.vimrc.bundle
 
-" let &cpo=s:cpo_save
-" unlet s:cpo_save
 " vim: ft=vim:et:sw=2:sts=2:fdm=marker :
