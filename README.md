@@ -21,7 +21,7 @@ Vim KaoriYaを想定した設定。
   
   また変更予定のない環境依存のPATH設定などもここで行う。
 
-3. gvimrc\_local.vim, vimrc\_local.vimを＄VIMに投げ込む。
+3. `gvimrc\_local.vim`, `vimrc\_local.vim` を `$VIM` に投げ込む。
 
   これらが読まれることにより、設定が書き換えられデフォルトの
   システムg/vimrcは読まない。
