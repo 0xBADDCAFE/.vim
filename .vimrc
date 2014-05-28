@@ -251,8 +251,6 @@ let $DATE = strftime('%Y%m%d')
 let g:netrw_liststyle = 3
 " CVSと.で始まるファイルは表示しない
 let g:netrw_list_hide = 'CVS,\(^\|\s\s\)\zs\.\S\+'
-" 
-let g:solarized_italic=0
 " }}}
 
 
