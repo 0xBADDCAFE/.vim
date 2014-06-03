@@ -22,6 +22,8 @@ scriptencoding utf-8
 
 syntax on
 filetype plugin indent on
+" not use menu and do fast.
+let g:did_install_default_menus = 1
 
 " for load vimrc
 augroup vimrc_loading
@@ -31,6 +33,7 @@ augroup END
 
 
 " set options {{{
+" When I check option detail, use K key (on windows).
 " common settings=======================================================
 set autoindent
 set background=dark
