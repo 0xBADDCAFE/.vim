@@ -163,7 +163,7 @@ endif
 " }}}
 
 
-" maps{{{
+" maps and abbreviations{{{
 " bind maps
 noremap Q gq
 " kill <F1> to open help.
@@ -179,6 +179,8 @@ nnoremap <Left>  3zh
 nnoremap <Right> 3zl
 nnoremap Y y$
 inoremap <C-U> <C-G>u<C-U>
+" Experimental: Wrap fold with <CR>.
+nnoremap <silent> <CR> :<C-u>silent! normal! za<CR><CR>
 
 " command maps
 nnoremap <silent> ,ee :<C-u>e ~/.vim/.vimrc<CR>
@@ -191,8 +193,11 @@ nnoremap B :ls<CR>:b
 nnoremap : q:i
 " It doesn't work incsearch.
 "   nnoremap / q/i
-" Experimental: Wrap fold with <CR>.
-nnoremap <silent> <CR> :<C-u>silent! normal! za<CR><CR>
+
+" abbreviations
+" When I use :w! command, it maybe explicitly.
+" It also define in autocmd section.
+cnoreabbrev w up
 " }}}
 
 
@@ -201,6 +206,7 @@ augroup vimrc_loading
   autocmd CmdWinEnter * nnoremap <buffer><silent> q :<C-u>quit<CR>
   autocmd CmdWinEnter * nnoremap <buffer><silent> <ESC> :<C-u>quit<CR>
   autocmd CmdWinEnter * inoremap <buffer><silent> <C-r><C-w> <C-c><C-r><C-w><C-f>i
+  autocmd CmdWinEnter * inoreabbrev <buffer> w up
   autocmd CmdWinEnter * setlocal backspace-=eol
   autocmd CmdWinEnter * setlocal completeopt+=longest
   autocmd CmdwinLeave * setlocal completeopt-=longest
