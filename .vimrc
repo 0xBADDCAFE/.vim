@@ -208,8 +208,9 @@ cnoreabbrev w up
 augroup vimrc_loading
   autocmd CmdWinEnter * nnoremap <buffer><silent> q :<C-u>quit<CR>
   autocmd CmdWinEnter * nnoremap <buffer><silent> <ESC> :<C-u>quit<CR>
+  autocmd CmdWinEnter * inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
   autocmd CmdWinEnter * inoremap <buffer><silent> <C-r><C-w> <C-c><C-r><C-w><C-f>i
-  autocmd CmdWinEnter * inoreabbrev <buffer> w up
+  " autocmd CmdWinEnter * inoreabbrev <buffer> w up
   autocmd CmdWinEnter * setlocal backspace-=eol
   autocmd CmdWinEnter * setlocal completeopt+=longest
   autocmd CmdwinLeave * setlocal completeopt-=longest
