@@ -24,6 +24,12 @@ let g:ctrlp_prompt_mappings = {
       \ 'ToggleFocus()':        ['<NOP>'],
       \ 'PrtExpandDir()':       ['<NOP>'],
       \ }
+
+" funky{{{
+nnoremap <F11> :CtrlPFunky<CR>
+let g:ctrlp_funky_syntax_highlight = 1
+" }}}
+
 " }}}
 " restart {{{
 " if enable restart session, leave session files in
@@ -128,6 +134,7 @@ endif
 " My Bundles here:{{{
 NeoBundle 'mattn/habatobi-vim'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'tacahiroy/ctrlp-funky'
 NeoBundle 'koron/nyancat-vim'
 NeoBundle 'koron/codic-vim'
 NeoBundle 'kana/vim-tabpagecd'
