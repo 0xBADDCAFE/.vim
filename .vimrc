@@ -191,7 +191,7 @@ nnoremap <silent> ,es :<C-u>sp ~/.vim/.vimrc<CR>
 nnoremap <silent> ,ev :<C-u>vs ~/.vim/.vimrc<CR>
 nnoremap <silent> ,et :<C-u>tabe ~/.vim/.vimrc<CR>
 nnoremap <silent> ,r :<C-u>source $MYVIMRC<CR>
-nnoremap <silent> <F3> :let &ts=(&ts*2 > 16 ? 2 : &ts*2)<cr>:echo "tabstop:" . &ts<cr>
+nnoremap <silent> <F3> :let &ts=(&ts*2 > 16 ? 2 : &ts*2)<cr>:echo "tabstop: " . &ts<cr>
 nnoremap B :ls<CR>:b
 nnoremap : q:i
 " It doesn't work incsearch.
@@ -200,7 +200,7 @@ nnoremap : q:i
 " abbreviations
 " When I use :w! command, it maybe explicitly.
 " It also define in autocmd section.
-cnoreabbrev w up
+" cnoreabbrev w up
 " }}}
 
 
