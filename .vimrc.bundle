@@ -44,6 +44,7 @@ if &encoding == 'utf-8'
   let g:airline_powerline_fonts=1
 endif
 let g:airline_section_z='%3p%% %{g:airline_symbols.linenr}%#__accent_bold#%4l%#__restore__#:%3v '
+let g:airline#extensions#default#section_truncate_width = {}
 
 " let g:airline#extensions#tabline#enabled = 1
 " }}}
