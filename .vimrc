@@ -41,6 +41,7 @@ set backspace=indent,eol,start
 set backup
 set browsedir=last              " It effect :browse [cmd]
 set clipboard+=unnamed
+set cursorline
 set diffopt=filler,iwhite,horizontal
 set expandtab
 set formatoptions+=mM
@@ -287,10 +288,11 @@ let g:netrw_list_hide = 'CVS,\(^\|\s\s\)\zs\.\S\+'
 " green     #859900  2/2 green     "
 " -----------------------------}}} "
 
-augroup highlightIdeographicSpace
+augroup ColorScheme
   autocmd!
   autocmd VimEnter,ColorScheme * highlight def link IdeographicSpace Visual
   autocmd VimEnter,WinEnter * match IdeographicSpace /　/
+  autocmd VimEnter,ColorScheme * highlight CursorLine NONE
 augroup END
 " }}}
 
