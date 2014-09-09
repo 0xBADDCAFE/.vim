@@ -182,6 +182,7 @@ nnoremap <Down>  3<C-e>
 nnoremap <Left>  3zh
 nnoremap <Right> 3zl
 nnoremap Y y$
+nnoremap m ^m
 inoremap <C-U> <C-G>u<C-U>
 " Experimental: Wrap fold with <CR>.
 nnoremap <silent> <CR> :<C-u>silent! normal! za<CR><CR>
