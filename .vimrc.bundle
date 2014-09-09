@@ -134,7 +134,7 @@ if !has('kaoriya')
 endif
 " My Bundles here:{{{
 NeoBundle 'mattn/habatobi-vim'
-NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'tacahiroy/ctrlp-funky'
 NeoBundle 'koron/nyancat-vim'
 NeoBundle 'koron/codic-vim'
