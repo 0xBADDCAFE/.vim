@@ -108,14 +108,7 @@ endif
 " Use https protocol over proxy.
 let g:neobundle#types#git#default_protocol = 'https'
 
-call neobundle#rc(expand('~/.vim/bundle/'))
-
-" If singleton, don't load other scripts.{{{
-if has('clientserver')
-  NeoBundle 'thinca/vim-singleton'
-  call singleton#enable()
-endif
-" }}}
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -132,6 +125,11 @@ if !has('kaoriya')
         \    },
         \ }
 endif
+" If singleton, don't load other scripts.{{{
+if has('clientserver')
+  NeoBundle 'thinca/vim-singleton'
+endif
+" }}}
 " My Bundles here:{{{
 NeoBundle 'mattn/habatobi-vim'
 NeoBundle 'ctrlpvim/ctrlp.vim'
@@ -164,12 +162,19 @@ NeoBundle 'lucapette/vim-textobj-underscore'
 " NeoBundle 'nathanaelkane/vim-indent-guides'
 " }}}
 
+call neobundle#end()
 filetype plugin indent on     " Required!
 "
 " Brief help
 " :NeoBundleList          - list configured bundles
 " :NeoBundleInstall(!)    - install(update) bundles
 " :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+
+" If singleton, don't load other scripts.{{{
+if has('clientserver')
+  call singleton#enable()
+endif
+" }}}
 
 " Installation check.
 NeoBundleCheck
