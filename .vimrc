@@ -81,10 +81,10 @@ set wildmenu
 set wildmode=longest:list,full
 set wrapscan
 if has('kaoriya')
-  set fileencodings=guess,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,utf-8,euc-jisx0213,euc-jp
+  set fileencodings=guess,ucs-bom,iso-2022-jp-3,utf-8,euc-jisx0213,euc-jp
   set formatexpr=autofmt#japanese#formatexpr()
 else
-  set fileencodings=utf-8,sjis,ucs-bom,ucs-2le,ucs-2,iso-2022-jp-3,euc-jisx0213,euc-jp
+  set fileencodings=utf-8,sjis,ucs-bom,iso-2022-jp-3,euc-jisx0213,euc-jp
 endif
 if exists('+breakindent')
   set wrap
