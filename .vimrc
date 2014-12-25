@@ -43,6 +43,7 @@ set browsedir=last              " It effect :browse [cmd]
 set clipboard+=unnamed
 set cursorline
 set diffopt=filler,iwhite,horizontal
+set display=lastline
 set expandtab
 set formatoptions+=mM
 set helplang=ja
