@@ -54,7 +54,7 @@ set ignorecase
 set incsearch
 set linespace=0
 set list
-if &encoding == 'utf-8'
+if &encoding ==# 'utf-8'
   set listchars=tab:‣\ ,trail:_
 else
   set listchars=tab:/.,trail:_
@@ -123,7 +123,6 @@ if has('unix')
   set backupskip=/tmp/*,/private/tmp/*
 endif
 
-cd $HOME
 " }}}
 
 
@@ -227,9 +226,12 @@ augroup vimrc_loading
 augroup END
 
 " Experimental: smart lcd
-augroup vimrc_loading
-  autocmd BufReadPost * if @# == '' && getcwd() == $HOME | cd %:p:h | endif
-augroup END
+if has('win32') && has('gui_running')
+  cd $HOME
+  augroup vimrc_loading
+    autocmd BufReadPost * if @# == '' && getcwd() == $HOME | cd %:p:h | endif
+  augroup END
+endif
 
 " " binary XXD editing mode
 " " FIXME: if enable these sentences, doesn't work Autodate.
