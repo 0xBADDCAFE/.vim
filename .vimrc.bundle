@@ -135,6 +135,7 @@ endif
 " }}}
 " My Bundles here:{{{
 NeoBundle 'mattn/habatobi-vim'
+NeoBundle 'mattn/sonictemplate-vim'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'tacahiroy/ctrlp-funky'
 NeoBundle 'koron/nyancat-vim'
