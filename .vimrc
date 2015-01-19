@@ -122,7 +122,6 @@ endif
 if has('unix')
   set backupskip=/tmp/*,/private/tmp/*
 endif
-
 " }}}
 
 
@@ -177,6 +176,10 @@ noremap j gj
 noremap k gk
 noremap gj j
 noremap gk k
+noremap [[ [[zt
+noremap ]] ]]zt
+noremap ][ ][zb
+noremap [] []zb
 nnoremap <Up>    3<C-y>
 nnoremap <Down>  3<C-e>
 nnoremap <Left>  3zh
