@@ -180,12 +180,12 @@ noremap [[ [[zt
 noremap ]] ]]zt
 noremap ][ ][zb
 noremap [] []zb
-nnoremap <Up>    3<C-y>
-nnoremap <Down>  3<C-e>
-nnoremap <Left>  3zh
-nnoremap <Right> 3zl
+nnoremap <Up>    <C-w><Up>
+nnoremap <Down>  <C-w><Down>
+nnoremap <Left>  <C-w><Left>
+nnoremap <Right> <C-w><Right>
 nnoremap Y y$
-inoremap <C-U> <C-G>u<C-U>
+inoremap <C-u> <C-g>u<C-u>
 " Experimental: Wrap fold with <CR>.
 nnoremap <silent> <CR> :<C-u>silent! normal! za<CR><CR>
 
