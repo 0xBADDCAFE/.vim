@@ -12,6 +12,7 @@ let g:ctrlp_match_window_bottom = 1
 " (1) is from bottom to top: >
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_max_height = 16
+let g:ctrlp_max_files = 3000
 let g:ctrlp_clear_cache_on_exit = 0
 " has migemo?
 if executable('CMigemo')
