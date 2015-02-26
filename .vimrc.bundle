@@ -163,6 +163,7 @@ NeoBundle 'thinca/vim-scouter'
 NeoBundle 'deris/columnjump'
 NeoBundle 'sjl/badwolf'
 NeoBundle 'lucapette/vim-textobj-underscore'
+NeoBundle 'slim-template/vim-slim'
 " NeoBundle 'epmatsw/ag.vim'
 " NeoBundle 'nathanaelkane/vim-indent-guides'
 " }}}
