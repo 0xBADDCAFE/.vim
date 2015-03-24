@@ -212,7 +212,9 @@ if has('gui_running')
   hi Todo guifg=#141413 guibg=#C7B386
 else
   let g:airline_theme='light'
-  colorscheme midnight
+  if len(globpath(&rtp, 'colors/' . color . '.vim', 1, 1))
+    colorscheme midnight
+  endif
 endif
 " }}}
 
