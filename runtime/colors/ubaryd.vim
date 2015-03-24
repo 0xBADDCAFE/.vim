@@ -17,7 +17,7 @@
 "
 " Maintainer:	Gianluca Fiore <forod.g@gmail.com>
 " Inspiration:	https://github.com/sjl/badwolf/
-" Last Change:	June 2012
+" Last Change:	October 2014
 " License:		Do Whatever You Want With This As Long As You Credit Where It's Due®
 "
 " }}}
@@ -107,7 +107,6 @@ let s:ubc.toffee = ['b88853', 137]
 let s:ubc.nut    = ['c7915b', 173]
 " What? Your cappuccino isn't that dark? Then it sucks
 let s:ubc.cappuccino = ['88633f', 95]
-
 " }}}
 " Highlighting Function {{{
 function! s:HL(group, fg, ...)
@@ -158,7 +157,6 @@ endif
 " }}}
 
 " Actual colorscheme ----------------------------------------------------------
-" Vanilla Vim {{{
 
 " General/UI {{{
 
@@ -192,7 +190,7 @@ call s:HL('Directory', 'lighttannedskin', '', 'bold')
 
 call s:HL('Title', 'bleaklemon')
 
-call s:HL('ErrorMsg',   'barcared',       'bg', 'bold')
+call s:HL('ErrorMsg',   'snow',       '', 'bold')
 call s:HL('MoreMsg',    'warmcorn',   '',   'bold')
 call s:HL('ModeMsg',    'lighttannedskin', '',   'bold')
 call s:HL('Question',   'lighttannedskin', '',   'bold')
@@ -209,8 +207,7 @@ call s:HL('Tag', '', '', 'bold')
 
 call s:HL('LineNr',     'mediumsand', s:gutter)
 call s:HL('SignColumn', '',             s:gutter)
-call s:HL('FoldColumn', 'deepgravel', s:gutter)
-" call s:HL('FoldColumn', 'mediumsand', s:gutter)
+call s:HL('FoldColumn', 'mediumsand', s:gutter)
 
 " }}}
 " Cursor {{{
@@ -279,13 +276,6 @@ call s:HL('Debug',  'snow',   '',      'bold')
 call s:HL('Ignore', 'gravel', '',      '')
 
 " }}}
-" TabLines {{{
-
-call s:HL('TabLine', 'mediumsand', 'blackgravel', 'underline')
-call s:HL('TabLineSel', 'toffee', '', 'none')
-call s:HL('TabLineFill', 'mediumsand', 'blackgravel', 'underline')
-
-" }}}
 " Completion Menu {{{
 
 call s:HL('Pmenu', 'plain', 'deepergravel')
@@ -296,9 +286,9 @@ call s:HL('PmenuThumb', 'bleaksand')
 " }}}
 " Diffs {{{
 
-call s:HL('DiffDelete', 'coal', 'coal')
-call s:HL('DiffAdd',    '',     'deepergravel')
-call s:HL('DiffChange', '',     'darkgravel')
+call s:HL('DiffDelete', 'coal', 'warmadobe')
+call s:HL('DiffAdd',    'barcared',     'deepergravel')
+call s:HL('DiffChange', 'warmorange',     'darkgravel')
 call s:HL('DiffText',   'snow', 'deepergravel', 'bold')
 
 " }}}
@@ -384,7 +374,6 @@ call s:HL('cStructure', 'orange', 'bg')
 call s:HL('cConstant', 'cappuccino', 'bg')
 
 " }}}
-
 " Clojure {{{
 
 call s:HL('clojureSpecial',  'barcared', '', '')
@@ -469,7 +458,6 @@ call s:HL('fsTypeKeyword', 'barcared', '')
 call s:HL('fsMountPoint', 'bleaklemon', '')
 
 " }}}
-
 " Go {{{
 call s:HL('goType', 'bleaklemon', '')
 call s:HL('goDeclaration', 'tannedumbrella', '')
@@ -524,6 +512,26 @@ call s:HL('javaCommentTitle', 'gravel', '')
 call s:HL('javaDocTags', 'snow', '', 'none')
 call s:HL('javaDocParam', 'warmcorn', '', '')
 
+" }}}
+" JavaScript {{{
+call s:HL('javaScriptStringD', 'lighttannedskin', '')
+call s:HL('javaScriptStringS', 'lighttannedskin', '')
+call s:HL('javaScriptBoolean', 'bleaklemon', '')
+call s:HL('javaScriptNull', 'barcared', '')
+call s:HL('javaScriptStatement', 'warmadobe', '')
+call s:HL('javaScriptFunction', 'tannedumbrella', '')
+call s:HL('javaScriptIdentifier', 'toffee', '')
+call s:HL('javaScriptBranch', 'tannedumbrella', '')
+
+" }}}
+" Json {{{
+
+call s:HL('jsonString', 'barcared', '', '')
+call s:HL('jsonNumber', 'warmcorn', '', '')
+call s:HL('jsonBoolean', 'bleaklemon', '', '')
+call s:HL('jsonNull', 'gravel', '', 'bold')
+
+" }}}
 " LaTex {{{
 
 call s:HL('textStatement', 'snow', '', 'none')
