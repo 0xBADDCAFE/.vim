@@ -40,7 +40,6 @@ let g:restart_save_window_values=0
 " }}}
 " airline {{{
 let g:airline_detect_iminsert=1
-let g:airline_detect_whitespace=0 "disabled
 if &encoding ==# 'utf-8'
   let g:airline_powerline_fonts=1
 endif
@@ -155,6 +154,7 @@ NeoBundle 'cocopon/iceberg.vim'
 NeoBundle '0xBADDCAFE/midnight.vim'
 NeoBundle '0xBADDCAFE/vim-markdown'
 NeoBundle 'glidenote/memolist.vim'
+NeoBundle 'kannokanno/previm'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-qfreplace'
 NeoBundle 'thinca/vim-visualstar'
