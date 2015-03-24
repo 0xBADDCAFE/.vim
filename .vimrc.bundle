@@ -104,6 +104,9 @@ nmap <c-j> <Plug>(columnjump-forward)
 " }}}
 
 " neobundle settings {{{
+if !exists('g:loaded_neobundle')
+  call system('curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh')
+endif
 
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
