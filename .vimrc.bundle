@@ -2,6 +2,12 @@
 " let g:variable = 0
 " }}}
 
+" plugin_setting_template {{{
+if !exists('loaded_matchit')
+  " enable matchit
+  runtime macros/matchit.vim
+endif
+" }}}
 " ctrlp{{{
 let g:ctrlp_cmd = 'CtrlPMRUFiles'
 " The maximum number of files to scan, set to 0 for no limit: >
@@ -149,6 +155,7 @@ NeoBundle 'tyru/restart.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-sleuth'
+NeoBundle 'tpope/vim-endwise'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'vim-scripts/summerfruit256.vim'
@@ -163,6 +170,7 @@ NeoBundle 'thinca/vim-qfreplace'
 NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'thinca/vim-threes'
 NeoBundle 'thinca/vim-scouter'
+NeoBundle 'thinca/vim-ref'
 NeoBundle 'deris/columnjump'
 NeoBundle 'sjl/badwolf'
 NeoBundle 'lucapette/vim-textobj-underscore'
