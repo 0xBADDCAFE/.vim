@@ -53,6 +53,7 @@ let g:airline_section_z='%3p%% %{g:airline_symbols.linenr}%#__accent_bold#%4l%#_
 let g:airline#extensions#default#section_truncate_width = {}
 
 " let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#whitespace#checks = []
 " }}}
 " indent-guide {{{
 " if has('gui_running')
