@@ -298,11 +298,9 @@ let g:netrw_list_hide = 'CVS,\(^\|\s\s\)\zs\.\S\+'
 " green     #859900  2/2 green     "
 " -----------------------------}}} "
 
-augroup ColorScheme
-  autocmd!
+augroup vimrc_loading
   autocmd VimEnter,ColorScheme * highlight def link IdeographicSpace Visual
   autocmd VimEnter,WinEnter * match IdeographicSpace /　/
-  autocmd VimEnter,ColorScheme * highlight CursorLine NONE
 augroup END
 " }}}
 

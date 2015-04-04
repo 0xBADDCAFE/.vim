@@ -1,0 +1,39 @@
+use Shougo/vimproc
+  enable_if "!has('kaoriya') || !has('win32')"
+use thinca/vim-singleton
+  enable_if "has('clientserver')"
+use mattn/habatobi-vim
+use mattn/sonictemplate-vim
+use ctrlpvim/ctrlp.vim
+use tacahiroy/ctrlp-funky
+use koron/nyancat-vim
+use koron/codic-vim
+use kana/vim-textobj-user
+use kana/vim-tabpagecd
+use tyru/restart.vim
+use bling/vim-airline
+use tpope/vim-fugitive
+use tpope/vim-sleuth
+use tpope/vim-endwise
+use osyo-manga/vim-monster
+use altercation/vim-colors-solarized
+use chriskempson/base16-vim
+use vim-scripts/summerfruit256.vim
+use w0ng/vim-hybrid
+use cocopon/iceberg.vim
+use 0xBADDCAFE/midnight.vim
+use 0xBADDCAFE/vim-markdown
+use glidenote/memolist.vim
+use kannokanno/previm
+use thinca/vim-quickrun
+use thinca/vim-qfreplace
+use thinca/vim-visualstar
+use thinca/vim-threes
+use thinca/vim-scouter
+use thinca/vim-ref
+use deris/columnjump
+use sjl/badwolf
+use lucapette/vim-textobj-underscore
+use slim-template/vim-slim
+# use epmatsw/ag.vim
+# use nathanaelkane/vim-indent-guides
