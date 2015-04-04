@@ -2,7 +2,7 @@
 " let g:variable = 0
 " }}}
 
-" plugin_setting_template {{{
+" standard plugins {{{
 if !exists('loaded_matchit')
   " enable matchit
   runtime macros/matchit.vim
