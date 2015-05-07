@@ -125,7 +125,7 @@ HaritiSetup
 
 " settings require loading plugins
 " TODO: If singleton, don't load other scripts.{{{
-if has('clientserver')
+if has('clientserver') && !has('gui_macvim')
   call singleton#enable()
 endif
 " }}}
