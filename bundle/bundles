@@ -7,7 +7,7 @@ use osyo-manga/vim-vigemo
 use mattn/habatobi-vim
 use mattn/sonictemplate-vim
 use lambdalisue/vim-gista
-use cohama/lexima.vim
+# use cohama/lexima.vim
 use ctrlpvim/ctrlp.vim
 use tacahiroy/ctrlp-funky
 use koron/nyancat-vim
