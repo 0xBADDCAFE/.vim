@@ -259,6 +259,9 @@ if exists('+transparency')
     if has('win32')
       autocmd FocusGained * set transparency=248
       autocmd FocusLost * set transparency=192
+    elseif has('gui_macvim')
+      autocmd FocusGained * set transparency=10
+      autocmd FocusLost * set transparency=50
     endif
   augroup END
 endif
