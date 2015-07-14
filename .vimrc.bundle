@@ -150,7 +150,8 @@ if has('gui_running')
   hi Todo guifg=#141413 guibg=#C7B386
 else
   let g:airline_theme='light'
-  au vimrc_loading VimEnter * if len(globpath(&rtp, 'colors/' . 'midnight' . '.vim', 1, 1)) | colorscheme midnight | endif
+  colorscheme midnight
+  " au vimrc_loading VimEnter * if len(globpath(&rtp, 'colors/' . 'midnight' . '.vim', 1, 1)) | colorscheme midnight | endif
 endif
 autocmd vimrc_loading VimEnter,ColorScheme * highlight CursorLine NONE
 " }}}
