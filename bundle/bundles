@@ -4,6 +4,7 @@ use thinca/vim-singleton
   enable_if "has('clientserver')"
 use osyo-manga/vim-hopping
 use osyo-manga/vim-vigemo
+use osyo-manga/vim-trip
 use mattn/habatobi-vim
 use mattn/sonictemplate-vim
 use lambdalisue/vim-gista
