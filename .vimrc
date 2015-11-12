@@ -143,7 +143,9 @@ if has('multi_byte_ime') || has('xim')
     " set imactivatekey=s-space
   endif
   " start insert mode with no IME input.
-  inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
+  if !has('mac')
+    inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
+  endif
 endif
 " }}}
 "
