@@ -281,6 +281,9 @@ let $DATE = strftime('%Y%m%d')
 let g:netrw_liststyle = 3
 " CVSと.で始まるファイルは表示しない
 let g:netrw_list_hide = 'CVS,\(^\|\s\s\)\zs\.\S\+'
+" HTML indent vals
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
 " }}}
 
 
