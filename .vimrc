@@ -107,6 +107,9 @@ set tabstop=4
 set shiftwidth=2
 set nrformats=hex,alpha
 set textwidth=0
+set notimeout
+set ttimeout
+set timeoutlen=100
 if has('gui_running')
   set lines=48
   set columns=84
