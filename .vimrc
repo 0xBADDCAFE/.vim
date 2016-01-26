@@ -181,14 +181,14 @@ noremap Q gq
 " kill <F1> to open help.
 noremap <F1> <nop>
 noremap! <F1> <nop>
-noremap j gj
-noremap k gk
-noremap gj j
-noremap gk k
-noremap [[ [[zt
-noremap ]] ]]zt
-noremap ][ ][zb
-noremap [] []zb
+noremap <silent> j gj
+noremap <silent> k gk
+noremap <silent> gj j
+noremap <silent> gk k
+noremap <silent> [[ [[zt
+noremap <silent> ]] ]]zt
+noremap <silent> ][ ][zb
+noremap <silent> [] []zb
 nnoremap <Up>    <C-w><Up>
 nnoremap <Down>  <C-w><Down>
 nnoremap <Left>  <C-w><Left>
