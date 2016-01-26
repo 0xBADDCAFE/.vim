@@ -1,3 +1,4 @@
+use kamichidu/vim-hariti
 use Shougo/vimproc
   enable_if "!has('kaoriya') || !has('win32')"
 use thinca/vim-singleton
