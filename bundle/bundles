@@ -5,6 +5,7 @@ use thinca/vim-singleton
 use osyo-manga/vim-hopping
 use osyo-manga/vim-vigemo
 use osyo-manga/vim-trip
+use mattn/webapi-vim
 use mattn/habatobi-vim
 use mattn/sonictemplate-vim
 use lambdalisue/vim-gista
@@ -39,5 +40,7 @@ use deris/columnjump
 use sjl/badwolf
 use lucapette/vim-textobj-underscore
 use slim-template/vim-slim
+use pangloss/vim-javascript
+use jwalton512/vim-blade
 # use epmatsw/ag.vim
 # use nathanaelkane/vim-indent-guides
