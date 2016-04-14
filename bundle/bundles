@@ -18,7 +18,9 @@ use koron/codic-vim
 use kana/vim-textobj-user
 use kana/vim-tabpagecd
 use tyru/restart.vim
-use bling/vim-airline
+use tyru/caw.vim
+use vim-airline/vim-airline
+use vim-airline/vim-airline-themes
 use tpope/vim-fugitive
 use tpope/vim-sleuth
 use osyo-manga/vim-monster
@@ -42,5 +44,7 @@ use lucapette/vim-textobj-underscore
 use slim-template/vim-slim
 use pangloss/vim-javascript
 use jwalton512/vim-blade
+use dsawardekar/wordpress.vim
+# use comeonly/php.vim-html-enhanced
 # use epmatsw/ag.vim
 # use nathanaelkane/vim-indent-guides
