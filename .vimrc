@@ -41,7 +41,7 @@ set backspace=indent,eol,start
 set backup
 set browsedir=last              " It effect :browse [cmd]
 set clipboard+=unnamed
-set completeopt+=longest
+set completeopt=menu,longest
 set cursorline
 set diffopt=filler,iwhite,horizontal
 set display=lastline
