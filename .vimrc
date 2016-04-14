@@ -60,6 +60,8 @@ if &encoding ==# 'utf-8'
 else
   set listchars=tab:/.,trail:_
 endif
+set modeline
+set modelines=1
 set mouse=a
 set nomousefocus
 set mousehide
