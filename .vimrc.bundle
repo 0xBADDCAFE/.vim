@@ -131,6 +131,7 @@ endif
 " }}}
 " colorschemes{{{
 " TODO: separate settings by g:colors_name value.
+autocmd vimrc_loading VimEnter,ColorScheme * highlight CursorLine NONE
 if has('gui_running')
   " solarized{{{
   " augroup solarizedAddHi
@@ -153,7 +154,6 @@ else
   " au vimrc_loading VimEnter * if len(globpath(&rtp, 'colors/' . 'midnight' . '.vim', 1, 1)) | colorscheme midnight | endif
   colorscheme midnight
 endif
-autocmd vimrc_loading VimEnter,ColorScheme * highlight CursorLine NONE
 " }}}
 
 " vim: ft=vim:et:sw=2:sts=2:fdm=marker :
